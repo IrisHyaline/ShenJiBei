@@ -61,7 +61,7 @@ export default {
 
 .button-increase{
     appearance: none; /* 移除默认样式 */
-    background-image: url('../public/right.png'); /* 设置未选中状态的背景图片 */
+    background-image: url('../assets/right.png'); /* 设置未选中状态的背景图片 */
     background-size: cover; /* 使背景图片覆盖整个 checkbox */
     width: 20px; /* 根据需要调整 checkbox 的大小 */
     height: 20px; /* 根据需要调整 checkbox 的大小 */
@@ -72,7 +72,7 @@ export default {
 
 .button-decrease{
     appearance: none; /* 移除默认样式 */
-    background-image: url('../public/left.png'); /* 设置未选中状态的背景图片 */
+    background-image: url('../assets/left.png'); /* 设置未选中状态的背景图片 */
     background-size: cover; /* 使背景图片覆盖整个 checkbox */
     width: 20px; /* 根据需要调整 checkbox 的大小 */
     height: 20px; /* 根据需要调整 checkbox 的大小 */
@@ -82,7 +82,7 @@ export default {
 }
 
 .input-background{
-    background-image: url('../public/input.png'); /* 设置背景图片 */
+    background-image: url('../assets/input.png'); /* 设置背景图片 */
     background-size: cover; /* 使背景图片覆盖整个 input */
     color: black; /* 设置文字颜色为白色 */  
     background-color: transparent; 

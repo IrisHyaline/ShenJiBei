@@ -1,8 +1,8 @@
 <template>
     <div class="subtitle">
-        <img src="../../public/arrow-left.png" alt="Image 1"> <!-- 第一张图片 -->
+        <img src="../assets/arrow-left.png" alt="Image 1"> <!-- 第一张图片 -->
         <div class="title">{{ text }}</div> <!-- 文字 -->
-        <img src="../../public/arrow-right.png" alt="Image 2"> <!-- 第二张图片 -->
+        <img src="../assets/arrow-right.png" alt="Image 2"> <!-- 第二张图片 -->
     </div>
 </template>
 

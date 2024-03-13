@@ -318,7 +318,7 @@ export default {
 .app-container {
     padding-top: 600px;
     /* background-color: #000; */
-    background-image: url('../public/background.jpg');
+    background-image: url('assets/background.jpg');
     background-size: cover;
 }
 
