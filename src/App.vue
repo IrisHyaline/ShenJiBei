@@ -7,7 +7,7 @@
                 <h1 style="text-align: center;">永恒杯计算器</h1>
             </div>
             <div class="app-column-container">
-                <div class="app-column-1">
+                <div class="app-column-1" >
 
                     <div>
                         <component is="subtitle" :text="'临时招募'"></component>
@@ -67,7 +67,7 @@
                         </table>
                         <div class="summary">总分：{{ total_end }} </div>
                     </div>
-                    
+
                     <div>
                         <component is="subtitle" :text="'特殊关卡'"></component>
                         <table class="table">
@@ -139,7 +139,7 @@
                         </table>
                         <div class="summary">总分：{{ total_urgent }}</div>
                     </div>
-                    
+
                     <div>
                         <component is="subtitle" :text="'隐藏敌人'"></component>
                         <table class="table">
@@ -175,43 +175,39 @@
                     </div>
                     <div>
                         <component is="subtitle" :text="'ban 干员'"></component>
-                        <div style="text-align: center;">扣分制，招募了打勾！！！</div>
                         <table class="double_column_table">
                             <div class="column">
-                                <component is="single-tick" ref="ban_men" :label="'玛恩纳'" :multiplier="50"
-                                    @tick-changed="recalTotal">
+                                <component is="naive-input-text" ref="ban_wsde" :label="'维什戴尔'"
+                                    @text-input-changed="recalTotal">
                                 </component>
-                                <component is="single-tick" ref="ban_jian" :label="'锏'" :multiplier="50"
-                                    @tick-changed="recalTotal">
+                                <component is="naive-input-text" ref="ban_lgs" :label="'逻各斯'" 
+                                    @text-input-changed="recalTotal">
                                 </component>
-                                <component is="single-tick" ref="ban_yns" :label="'伊内丝'" :multiplier="50"
-                                    @tick-changed="recalTotal">
+                                <component is="naive-input-text" ref="ban_al" :label="'艾拉'" 
+                                    @text-input-changed="recalTotal">
                                 </component>
-                                <component is="single-tick" ref="ban_jmdkss" :label="'缄默德克萨斯'" :multiplier="30"
-                                    @tick-changed="recalTotal">
+                                <component is="naive-input-text" ref="ban_shu" :label="'黍'" 
+                                    @text-input-changed="recalTotal">
                                 </component>
-                                <component is="single-tick" ref="ban_qlryd" :label="'麒麟R夜刀'" :multiplier="30"
-                                    @tick-changed="recalTotal">
-                                </component>
-                                <component is="single-tick" ref="ban_yywc" :label="'焰影苇草'" :multiplier="30"
-                                    @tick-changed="recalTotal">
+                                <component is="naive-input-text" ref="ban_jian" :label="'锏'"
+                                    @text-input-changed="recalTotal">
                                 </component>
                             </div>
                             <div class="column">
-                                <component is="single-tick" ref="ban_cjayfl" :label="'纯烬艾雅法拉'" :multiplier="20"
-                                    @tick-changed="recalTotal">
+                                <component is="naive-input-text" ref="ban_yns" :label="'伊内丝'" 
+                                    @text-input-changed="recalTotal">
                                 </component>
-                                <component is="single-tick" ref="ban_zxskd" :label="'浊心斯卡蒂'" :multiplier="20"
-                                    @tick-changed="recalTotal">
+                                <component is="naive-input-text" ref="ban_qlryd" :label="'麒麟R夜刀'" 
+                                    @text-input-changed="recalTotal">
                                 </component>
-                                <component is="single-tick" ref="ban_tf" :label="'提丰'" :multiplier="20"
-                                    @tick-changed="recalTotal">
+                                <component is="naive-input-text" ref="ban_yywc" :label="'焰影苇草'" 
+                                    @text-input-changed="recalTotal">
                                 </component>
-                                <component is="single-tick" ref="ban_shu" :label="'黍'" :multiplier="20"
-                                    @tick-changed="recalTotal">
+                                <component is="naive-input-text" ref="ban_jmdkss" :label="'缄默德克萨斯'" 
+                                    @text-input-changed="recalTotal">
                                 </component>
-                                <component is="single-tick" ref="ban_tw" :label="'>四星铁卫'" :multiplier="30"
-                                    @tick-changed="recalTotal">
+                                <component is="naive-input-text" ref="ban_men" :label="'玛恩纳'" 
+                                    @text-input-changed="recalTotal">
                                 </component>
                             </div>
                         </table>
@@ -301,13 +297,9 @@ export default {
                 .filter(ref => ref.startsWith('special'))
                 .reduce((total, ref) => total + this.$refs[ref].result, 0);
 
-            let ban_sum = Object.keys(this.$refs)
-                .filter(ref => ref.startsWith('ban'))
-                .reduce((total, ref) => total + this.$refs[ref].multiplier, 0);
-            let ban_sub = Object.keys(this.$refs)
+            this.total_ban = Object.keys(this.$refs)
                 .filter(ref => ref.startsWith('ban'))
                 .reduce((total, ref) => total + this.$refs[ref].result, 0);
-            this.total_ban = ban_sum - ban_sub;
 
             this.total_penalty = Object.keys(this.$refs)
                 .filter(ref => ref.startsWith('penalty'))
@@ -342,9 +334,12 @@ export default {
     align-items: center;
 }
 
-@media (min-width: 1200px) { /* 当屏幕宽度大于或等于 1200px 时 */
+@media (min-width: 1200px) {
+
+    /* 当屏幕宽度大于或等于 1200px 时 */
     .app-column-container {
-        flex-direction: row; /* 变为三列 */
+        flex-direction: row;
+        /* 变为三列 */
     }
 }
 
@@ -359,7 +354,7 @@ export default {
 }
 
 .app-column-3 {
-    flex: 10;
+    flex: 15;
     align-self: flex-start;
 }
 
@@ -385,7 +380,9 @@ table {
     color: #aec5d7;
 }
 
-@media (max-width: 1200px) { /* 当屏幕宽度大于或等于 1200px 时 */
+@media (max-width: 1200px) {
+
+    /* 当屏幕宽度大于或等于 1200px 时 */
     .app {
         max-width: 400px;
     }
