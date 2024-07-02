@@ -4,7 +4,7 @@
     <div class="app-container">
         <div class="app">
             <div>
-                <h1 style="text-align: center;">永恒杯计算器</h1>
+                <h1 style="text-align: center;">不学无术杯计算器</h1>
             </div>
             <div class="app-column-container">
                 <div class="app-column-1" >
