@@ -94,13 +94,13 @@
                     <div>
                         <component is="subtitle" :text="'特殊关卡'"></component>
                         <table>
-                            <component is="input-text" ref="special1" :label="'劫虚济实(无漏)'" :multiplier="30"
+                            <component is="input-text" ref="special1" :label="'劫虚济实'" :multiplier="30"
                                 @text-input-changed="recalTotal">
                             </component>
-                            <component is="input-text" ref="special2" :label="'(紧急)战场侧面(无漏)'" :multiplier="50"
+                            <component is="input-text" ref="special2" :label="'(紧急)战场侧面'" :multiplier="50"
                                 @text-input-changed="recalTotal">
                             </component>
-                            <component is="input-text" ref="special3" :label="'(紧急)鸭速公路(无漏)'" :multiplier="30"
+                            <component is="input-text" ref="special3" :label="'(紧急)鸭速公路'" :multiplier="30"
                                 @text-input-changed="recalTotal">
                             </component>
                         </table>
@@ -155,12 +155,14 @@
                                 </td>
                                 <td>&nbsp;</td>
                                 <td>&nbsp;</td>
+                                <td>&nbsp;</td>
                             </tr>
                             <tr>
                                 <td>
                                     <component is="single-tick" ref="end2" :label="'离歌的庭院'" :multiplier="50"
                                         @tick-changed="recalTotal"></component>
                                 </td>
+                                <td>&nbsp;</td>
                                 <td>&nbsp;</td>
                                 <td>&nbsp;</td>
                             </tr>
@@ -177,6 +179,10 @@
                                     <component is="single-tick" ref="end_special3" :label="'奇观年代'" :multiplier="50"
                                         @tick-changed="recalTotal"></component>
                                 </td>
+                                <td>
+                                    <component is="single-tick" ref="end_mowang3" :label="'魔王年代'" :multiplier="20"
+                                        @tick-changed="recalTotal"></component>
+                                </td>
                             </tr>
                             <tr>
                                 <td>
@@ -191,6 +197,10 @@
                                     <component is="single-tick" ref="end_special4" :label="'奇观年代'" :multiplier="50"
                                         @tick-changed="recalTotal"></component>
                                 </td>
+                                <td>
+                                    <component is="single-tick" ref="end_mowang4" :label="'魔王年代'" :multiplier="50"
+                                        @tick-changed="recalTotal"></component>
+                                </td>
                             </tr>
                             <tr>
                                 <td>
@@ -203,6 +213,10 @@
                                 </td>
                                 <td>
                                     <component is="single-tick" ref="end_special5" :label="'奇观年代'" :multiplier="50"
+                                        @tick-changed="recalTotal"></component>
+                                </td>
+                                <td>
+                                    <component is="single-tick" ref="end_mowang5" :label="'魔王年代'" :multiplier="50"
                                         @tick-changed="recalTotal"></component>
                                 </td>
                             </tr>
@@ -351,7 +365,7 @@ export default {
 
 <style>
 .app-container {
-    padding-top: 600px;
+    padding-top: 1100px;
     /* background-color: #000; */
     background-image: url('assets/background.jpg');
     background-size: cover;
@@ -433,7 +447,7 @@ table {
     font-family: Arial, sans-serif;
     /* background-color: #000; */
     /* 如果需要，可以添加这一行来使背景图片覆盖整个元素 */
-    color: #aec5d7;
+    color: #d7aebe;
 }
 
 @media (max-width: 1200px) {

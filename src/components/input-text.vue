@@ -63,8 +63,8 @@ export default {
     appearance: none; /* 移除默认样式 */
     background-image: url('../assets/right.png'); /* 设置未选中状态的背景图片 */
     background-size: cover; /* 使背景图片覆盖整个 checkbox */
-    width: 20px; /* 根据需要调整 checkbox 的大小 */
-    height: 20px; /* 根据需要调整 checkbox 的大小 */
+    width: 25px; /* 根据需要调整 checkbox 的大小 */
+    height: 25px; /* 根据需要调整 checkbox 的大小 */
     vertical-align: middle; /* 添加这一行 */
     border: none;
     background-color: transparent; 
@@ -74,8 +74,8 @@ export default {
     appearance: none; /* 移除默认样式 */
     background-image: url('../assets/left.png'); /* 设置未选中状态的背景图片 */
     background-size: cover; /* 使背景图片覆盖整个 checkbox */
-    width: 20px; /* 根据需要调整 checkbox 的大小 */
-    height: 20px; /* 根据需要调整 checkbox 的大小 */
+    width: 25px; /* 根据需要调整 checkbox 的大小 */
+    height: 25px; /* 根据需要调整 checkbox 的大小 */
     vertical-align: middle; /* 添加这一行 */
     border: none;
     background-color: transparent; 
