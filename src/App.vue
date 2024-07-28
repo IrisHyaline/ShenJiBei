@@ -228,39 +228,39 @@
                         <div style="text-align: center;">取最高！！！</div>
                         <table>
                             <td>
-                                    <component is="input-text" ref="era1_1" :label="'天灾年代 I'" :multiplier="3"
+                                    <component is="input-text" ref="era1_1" :label="'天灾年代 I'" :multiplier="5"
                                         @text-input-changed="recalTotal"></component>
                                     <component is="input-text" ref="era2_1" :label="'金融年代 I'" :multiplier="10"
                                         @text-input-changed="recalTotal"></component>
-                                    <component is="input-text" ref="era3_1" :label="'拥挤年代 I'" :multiplier="5"
+                                    <component is="input-text" ref="era3_1" :label="'拥挤年代 I'" :multiplier="15"
                                         @text-input-changed="recalTotal"></component>
-                                    <component is="input-text" ref="era4_1" :label="'奇观年代 I'" :multiplier="5"
+                                    <component is="input-text" ref="era4_1" :label="'奇观年代 I'" :multiplier="10"
                                         @text-input-changed="recalTotal"></component>
-                                    <component is="input-text" ref="era5_1" :label="'苦难年代 I'" :multiplier="10"
-                                        @text-input-changed="recalTotal"></component>
-                            </td>
-                            <td>
-                                    <component is="input-text" ref="era1_2" :label="'II'" :multiplier="5"
-                                        @text-input-changed="recalTotal"></component>
-                                    <component is="input-text" ref="era2_2" :label="'II'" :multiplier="15"
-                                        @text-input-changed="recalTotal"></component>
-                                    <component is="input-text" ref="era3_2" :label="'II'" :multiplier="10"
-                                        @text-input-changed="recalTotal"></component>
-                                    <component is="input-text" ref="era4_2" :label="'II'" :multiplier="10"
-                                        @text-input-changed="recalTotal"></component>
-                                    <component is="input-text" ref="era5_2" :label="'II'" :multiplier="20"
+                                    <component is="input-text" ref="era5_1" :label="'苦难年代 I'" :multiplier="20"
                                         @text-input-changed="recalTotal"></component>
                             </td>
                             <td>
-                                    <component is="input-text" ref="era1_3" :label="'III'" :multiplier="10"
+                                    <component is="input-text" ref="era1_2" :label="'II'" :multiplier="10"
                                         @text-input-changed="recalTotal"></component>
-                                    <component is="input-text" ref="era2_3" :label="'III'" :multiplier="30"
+                                    <component is="input-text" ref="era2_2" :label="'II'" :multiplier="20"
                                         @text-input-changed="recalTotal"></component>
-                                    <component is="input-text" ref="era3_3" :label="'III'" :multiplier="15"
+                                    <component is="input-text" ref="era3_2" :label="'II'" :multiplier="25"
                                         @text-input-changed="recalTotal"></component>
-                                    <component is="input-text" ref="era4_3" :label="'III'" :multiplier="30"
+                                    <component is="input-text" ref="era4_2" :label="'II'" :multiplier="15"
                                         @text-input-changed="recalTotal"></component>
-                                    <component is="input-text" ref="era5_3" :label="'III'" :multiplier="50"
+                                    <component is="input-text" ref="era5_2" :label="'II'" :multiplier="40"
+                                        @text-input-changed="recalTotal"></component>
+                            </td>
+                            <td>
+                                    <component is="input-text" ref="era1_3" :label="'III'" :multiplier="15"
+                                        @text-input-changed="recalTotal"></component>
+                                    <component is="input-text" ref="era2_3" :label="'III'" :multiplier="40"
+                                        @text-input-changed="recalTotal"></component>
+                                    <component is="input-text" ref="era3_3" :label="'III'" :multiplier="40"
+                                        @text-input-changed="recalTotal"></component>
+                                    <component is="input-text" ref="era4_3" :label="'III'" :multiplier="40"
+                                        @text-input-changed="recalTotal"></component>
+                                    <component is="input-text" ref="era5_3" :label="'III'" :multiplier="70"
                                         @text-input-changed="recalTotal"></component>
                             </td>
                         </table>
