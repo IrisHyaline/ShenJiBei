@@ -228,40 +228,40 @@
                         <div style="text-align: center;">取最高！！！</div>
                         <table>
                             <td>
-                                    <component is="input-text" ref="era1_1" :label="'天灾年代 I'" :multiplier="5"
-                                        @text-input-changed="recalTotal"></component>
-                                    <component is="input-text" ref="era2_1" :label="'金融年代 I'" :multiplier="10"
-                                        @text-input-changed="recalTotal"></component>
-                                    <component is="input-text" ref="era3_1" :label="'拥挤年代 I'" :multiplier="15"
-                                        @text-input-changed="recalTotal"></component>
-                                    <component is="input-text" ref="era4_1" :label="'奇观年代 I'" :multiplier="10"
-                                        @text-input-changed="recalTotal"></component>
-                                    <component is="input-text" ref="era5_1" :label="'苦难年代 I'" :multiplier="20"
-                                        @text-input-changed="recalTotal"></component>
+                                <component is="input-text" ref="era1_1" :label="'天灾年代 I'" :multiplier="5"
+                                    @text-input-changed="recalTotal"></component>
+                                <component is="input-text" ref="era2_1" :label="'金融年代 I'" :multiplier="10"
+                                    @text-input-changed="recalTotal"></component>
+                                <component is="input-text" ref="era3_1" :label="'拥挤年代 I'" :multiplier="15"
+                                    @text-input-changed="recalTotal"></component>
+                                <component is="input-text" ref="era4_1" :label="'奇观年代 I'" :multiplier="10"
+                                    @text-input-changed="recalTotal"></component>
+                                <component is="input-text" ref="era5_1" :label="'苦难年代 I'" :multiplier="20"
+                                    @text-input-changed="recalTotal"></component>
                             </td>
                             <td>
-                                    <component is="input-text" ref="era1_2" :label="'II'" :multiplier="10"
-                                        @text-input-changed="recalTotal"></component>
-                                    <component is="input-text" ref="era2_2" :label="'II'" :multiplier="20"
-                                        @text-input-changed="recalTotal"></component>
-                                    <component is="input-text" ref="era3_2" :label="'II'" :multiplier="25"
-                                        @text-input-changed="recalTotal"></component>
-                                    <component is="input-text" ref="era4_2" :label="'II'" :multiplier="15"
-                                        @text-input-changed="recalTotal"></component>
-                                    <component is="input-text" ref="era5_2" :label="'II'" :multiplier="40"
-                                        @text-input-changed="recalTotal"></component>
+                                <component is="input-text" ref="era1_2" :label="'II'" :multiplier="10"
+                                    @text-input-changed="recalTotal"></component>
+                                <component is="input-text" ref="era2_2" :label="'II'" :multiplier="20"
+                                    @text-input-changed="recalTotal"></component>
+                                <component is="input-text" ref="era3_2" :label="'II'" :multiplier="25"
+                                    @text-input-changed="recalTotal"></component>
+                                <component is="input-text" ref="era4_2" :label="'II'" :multiplier="15"
+                                    @text-input-changed="recalTotal"></component>
+                                <component is="input-text" ref="era5_2" :label="'II'" :multiplier="40"
+                                    @text-input-changed="recalTotal"></component>
                             </td>
                             <td>
-                                    <component is="input-text" ref="era1_3" :label="'III'" :multiplier="15"
-                                        @text-input-changed="recalTotal"></component>
-                                    <component is="input-text" ref="era2_3" :label="'III'" :multiplier="40"
-                                        @text-input-changed="recalTotal"></component>
-                                    <component is="input-text" ref="era3_3" :label="'III'" :multiplier="40"
-                                        @text-input-changed="recalTotal"></component>
-                                    <component is="input-text" ref="era4_3" :label="'III'" :multiplier="40"
-                                        @text-input-changed="recalTotal"></component>
-                                    <component is="input-text" ref="era5_3" :label="'III'" :multiplier="70"
-                                        @text-input-changed="recalTotal"></component>
+                                <component is="input-text" ref="era1_3" :label="'III'" :multiplier="15"
+                                    @text-input-changed="recalTotal"></component>
+                                <component is="input-text" ref="era2_3" :label="'III'" :multiplier="40"
+                                    @text-input-changed="recalTotal"></component>
+                                <component is="input-text" ref="era3_3" :label="'III'" :multiplier="40"
+                                    @text-input-changed="recalTotal"></component>
+                                <component is="input-text" ref="era4_3" :label="'III'" :multiplier="40"
+                                    @text-input-changed="recalTotal"></component>
+                                <component is="input-text" ref="era5_3" :label="'III'" :multiplier="70"
+                                    @text-input-changed="recalTotal"></component>
                             </td>
                         </table>
                         <div class="summary">总分：{{ total_era }}</div>
@@ -269,6 +269,43 @@
                 </div>
             </div>
             <h1 style="text-align: center;">选手总分：{{ _total }} </h1>
+            <component is="bigsubtitle" :text="'年代说明'"></component>
+            <div class="info-column-container">
+                <div class="info-column-1">
+                    <div>
+                        <component is="subtitle" :text="'天灾年代'"></component>
+                        <p>I 清理至少2根年代之刺或饮泣之刺 +5分</p>
+                        <p>II 清理至少3根年代之刺或饮泣之刺 +10分</p>
+                        <p>III 清理至少4根年代之刺或饮泣之刺 +15分</p>
+                    </div>
+                    <div>
+                        <component is="subtitle" :text="'金融年代'"></component>
+                        <p>I 全程无漏通关 +10分</p>
+                        <p>II 持有巴别塔誓言或思绪混乱进入战斗并无漏 +20分</p>
+                        <p>III <b>同时</b>持有巴别塔誓言<b>和</b>思绪混乱进入战斗并无漏 +40分</p>
+                    </div>
+                    <div>
+                        <component is="subtitle" :text="'拥挤年代'"></component>
+                        <p>I 同时部署人数小于等于3完成战斗 +15分</p>
+                        <p>II 同时部署人数小于等于3无漏过关 +25分</p>
+                        <p>III 同时部署人数小于等于2无漏过关 +40分</p>
+                    </div>
+                </div>
+                <div class="info-column-2">
+                    <div>
+                        <component is="subtitle" :text="'奇观年代'"></component>
+                        <p>I 未使用灵感进入战斗并胜利 +10分</p>
+                        <p>II 未使用灵感进入战斗并全程无漏通关 +20分</p>
+                        <p>III 未使用灵感进入战斗并全程无漏通关，且战斗包含至少一个领袖级敌人 +40分</p>
+                    </div>
+                    <div>
+                        <component is="subtitle" :text="'苦难年代'"></component>
+                        <p>I 在药枚、筑墙、活木甲不生效的情况下完成战斗 +20分</p>
+                        <p>II 在药枚、筑墙、活木甲不生效的情况下<b>无漏</b>完成战斗 +40分</p>
+                        <p>III 在药枚、筑墙、活木甲不生效的情况下干员<b>不主动撤退或被击倒</b><b>无漏</b>完成战斗 +70分</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </template>
@@ -427,6 +464,15 @@ export default {
     align-self: flex-start;
 }
 
+.info-column-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.info-column {
+  flex: 1;
+  margin: 0 10px;
+}
 
 .double_column_table {
     margin: auto;
