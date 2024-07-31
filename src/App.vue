@@ -7,6 +7,15 @@
                 <h1 style="text-align: center;">蜀道行计算器</h1>
             </div>
             <component is="bigsubtitle" :text="'团队得分'"></component>
+            <div class="centered-select">
+                <select v-model="selectedOption" class="custom-select">
+                    <option value="" selected disabled>队伍名称</option>
+                    <option value="team1">队伍1</option>
+                    <option value="team2">队伍2</option>
+                    <option value="team3">队伍3</option>
+                    <option value="team4">队伍4</option>
+                </select>
+            </div>
             <div class="team-column-container">
                 <div class="team-column-1">
                     <div>
@@ -85,7 +94,7 @@
                     </div>
                 </div>
             </div>
-            <h1 style="text-align: center;">团队总分：{{ _teamtotal }} </h1>
+            <h1 style="text-align: center;">{{ selectedOption }}团队总分：{{ _teamtotal }} </h1>
             <component is="bigsubtitle" :text="'个人得分'"></component>
             <div class="app-column-container">
                 <div class="app-column-1">
@@ -327,6 +336,7 @@ export default {
     },
     data() {
         return {
+            selectedOption: '',
             total_ban: 0,
             total_coins: 0,
             total_player: 0,
@@ -401,6 +411,30 @@ export default {
 </script>
 
 <style>
+.centered-select {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.custom-select {
+    padding: 10px;
+    font-size: 16px;
+    background: url('../assets/input.png') no-repeat right center;
+    background-size: 20px auto;/* 调整背景图片的大小 */
+    -webkit-appearance: none;/* 隐藏默认的下拉箭头 */
+    -moz-appearance: none;/* 隐藏默认的下拉箭头 */
+    appearance: none;/* 隐藏默认的下拉箭头 */
+    color: #d7aebe;/* 修改字体颜色 */
+    border: none;/* 去掉白色边框 */
+    font-size: 24px;
+}
+
+.select {
+    padding: 10px;
+    font-size: 16px;
+}
+
 .app-container {
     padding-top: 1100px;
     /* background-color: #000; */
@@ -465,13 +499,13 @@ export default {
 }
 
 .info-column-container {
-  display: flex;
-  justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
 }
 
 .info-column {
-  flex: 1;
-  margin: 0 10px;
+    flex: 1;
+    margin: 0 10px;
 }
 
 .double_column_table {
