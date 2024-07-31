@@ -337,7 +337,7 @@ export default {
     data() {
         return {
             selectedOption: '',
-            total_ban: 0,
+            total_ban: 3650,
             total_coins: 0,
             total_player: 0,
             _teamtotal: 0,
