@@ -10,10 +10,11 @@
             <div class="centered-select">
                 <select v-model="selectedOption" class="custom-select">
                     <option value="" selected disabled>队伍名称</option>
-                    <option value="team1">队伍1</option>
-                    <option value="team2">队伍2</option>
-                    <option value="team3">队伍3</option>
-                    <option value="team4">队伍4</option>
+                    <option value="花嫁大爹伴郎团">花嫁大爹伴郎团</option>
+                    <option value="一起拉屎">一起拉屎</option>
+                    <option value="脑子要爆炸了">脑子要爆炸了</option>
+                    <option value="啊不对不队">啊不对不队</option>
+                    <option value="澄闪天下第一">澄闪天下第一</option>
                 </select>
             </div>
             <div class="team-column-container">
@@ -428,6 +429,8 @@ export default {
     color: #d7aebe;/* 修改字体颜色 */
     border: none;/* 去掉白色边框 */
     font-size: 24px;
+    text-align: center; /* 使选项文字居中 */
+    text-align-last: center; /* 使选中的选项文字居中 */
 }
 
 .select {
