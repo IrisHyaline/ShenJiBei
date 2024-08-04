@@ -256,7 +256,7 @@
                                     @text-input-changed="recalTotal"></component>
                                 <component is="input-text" ref="era3_2" :label="'II'" :multiplier="25"
                                     @text-input-changed="recalTotal"></component>
-                                <component is="input-text" ref="era4_2" :label="'II'" :multiplier="15"
+                                <component is="input-text" ref="era4_2" :label="'II'" :multiplier="20"
                                     @text-input-changed="recalTotal"></component>
                                 <component is="input-text" ref="era5_2" :label="'II'" :multiplier="40"
                                     @text-input-changed="recalTotal"></component>
