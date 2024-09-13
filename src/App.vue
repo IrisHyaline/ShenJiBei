@@ -65,9 +65,9 @@
                             </div>
                             <div>
                                 <Dropdown title="特殊事件作战" :options="[
-                                    { text: '战场侧面', value: 60 },
-                                    { text: '鸭速公路', value: 20 },
-                                    { text: '劫虚济实', value: 20 }
+                                    { text: '紧急战场侧面', value: 60 },
+                                    { text: '紧急鸭速公路', value: 20 },
+                                    { text: '紧急劫虚济实', value: 20 }
                                 ]" @score-changed="updateScore(8, $event)" />
                             </div>
                         </div>
@@ -77,7 +77,7 @@
                     <div>
                         <component is="bigsubtitle" :text="'分数修正'"></component>
                         <table class="table">
-                            <component is="input-text" ref="repair" :label="'分数修正'" :multiplier="-1"
+                            <component is="naive-input-text" ref="repair" :label="'分数修正'" :multiplier="-1"
                                 @text-input-changed="recalTotal"></component>
                         </table>
                     </div>
@@ -190,7 +190,7 @@ export default {
                 .filter(key => key.startsWith('steps'))
                 .reduce((sum, key) => sum + this.$refs[key].result, 0);
             const repair = this.$refs.repair.result;
-            this._total = this.total_steps + this.total_fights + repair + this.total_events;
+            this._total = this.total_steps + this.total_fights - repair + this.total_events;
 
         }
     },
