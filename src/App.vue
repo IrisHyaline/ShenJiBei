@@ -59,8 +59,8 @@
                             </div>
                             <div>
                                 <Dropdown title="六层紧急作战" :options="[
-                                    { text: '谋求共识”', value: 60 },
-                                    { text: '神圣的渴求”', value: 60 }
+                                    { text: '谋求共识', value: 60 },
+                                    { text: '神圣的渴求', value: 60 }
                                 ]" @score-changed="updateScore(7, $event)" />
                             </div>
                             <div>
