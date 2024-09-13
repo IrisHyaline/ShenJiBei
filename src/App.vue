@@ -4,318 +4,129 @@
     <div class="app-container">
         <div class="app">
             <div>
-                <h1 style="text-align: center;">蜀道行计算器</h1>
+                <h1 style="text-align: center;"></h1>
             </div>
-            <component is="bigsubtitle" :text="'团队得分'"></component>
-            <div class="centered-select">
-                <select v-model="selectedOption" class="custom-select">
-                    <option value="" selected disabled>队伍名称</option>
-                    <option value="花嫁大爹伴郎团">花嫁大爹伴郎团</option>
-                    <option value="一起拉屎">一起拉屎</option>
-                    <option value="脑子要爆炸了">脑子要爆炸了</option>
-                    <option value="啊不对不队">啊不对不队</option>
-                    <option value="澄闪天下第一">澄闪天下第一</option>
-                </select>
-            </div>
-            <div class="team-column-container">
-                <div class="team-column-1">
-                    <div>
-                        <component is="subtitle" :text="'干员次数'"></component>
-                        <div style="text-align: center;">扣分制！！！</div>
-                        <table class="double_column_table">
-                            <div class="column">
-                                <component is="input-text" ref="ban_wsdr" :label="'维什戴尔'" :multiplier="500"
-                                    @text-input-changed="recalTotal">
-                                </component>
-                                <component is="input-text" ref="ban_lgs" :label="'逻各斯'" :multiplier="250"
-                                    @text-input-changed="recalTotal">
-                                </component>
-                                <component is="input-text" ref="ban_nf" :label="'妮芙'" :multiplier="150"
-                                    @text-input-changed="recalTotal">
-                                </component>
-                                <component is="input-text" ref="ban_askl" :label="'阿斯卡纶'" :multiplier="150"
-                                    @text-input-changed="recalTotal">
-                                </component>
-                                <component is="input-text" ref="ban_cjayfl" :label="'纯烬艾雅法拉'" :multiplier="100"
-                                    @text-input-changed="recalTotal">
-                                </component>
-                                <component is="input-text" ref="ban_al" :label="'艾拉'" :multiplier="100"
-                                    @text-input-changed="recalTotal">
-                                </component>
-                                <component is="input-text" ref="ban_s" :label="'黍'" :multiplier="100"
-                                    @text-input-changed="recalTotal">
-                                </component>
-                                <component is="input-text" ref="ban_ly" :label="'莱伊'" :multiplier="75"
-                                    @text-input-changed="recalTotal">
-                                </component>
-                                <component is="input-text" ref="ban_qlryd" :label="'麒麟R夜刀'" :multiplier="75"
-                                    @text-input-changed="recalTotal">
-                                </component>
-                                <component is="input-text" ref="ban_yns" :label="'伊内丝'" :multiplier="75"
-                                    @text-input-changed="recalTotal">
-                                </component>
-                                <component is="input-text" ref="extrasix" :label="'额外六星'" :multiplier="300"
-                                    @text-input-changed="recalTotal">
-                                </component>
-                            </div>
-                        </table>
-                        <div class="summary">总分：{{ total_ban }} </div>
-                    </div>
-                </div>
-                <div class="team-column-2">
-                    <div>
-                        <component is="subtitle" :text="'取源石锭'"></component>
-                        <table class="table">
-                            <component is="input-text" ref="coins1" :label="'选手1'" :multiplier="1"
-                                @text-input-changed="recalTotal">
-                            </component>
-                            <component is="input-text" ref="coins2" :label="'选手2'" :multiplier="1"
-                                @text-input-changed="recalTotal">
-                            </component>
-                            <component is="input-text" ref="coins3" :label="'选手3'" :multiplier="1"
-                                @text-input-changed="recalTotal">
-                            </component>
-                        </table>
-                        <div class="summary">总分：{{ total_coins }}</div>
-                    </div>
-                    <div>
-                        <component is="subtitle" :text="'结算分'"></component>
-                        <table class="table">
-                            <component is="naive-input-text" ref="player1" :label="'选手1'"
-                                @text-input-changed="recalTotal">
-                            </component>
-                            <component is="naive-input-text" ref="player2" :label="'选手2'"
-                                @text-input-changed="recalTotal">
-                            </component>
-                            <component is="naive-input-text" ref="player3" :label="'选手3'"
-                                @text-input-changed="recalTotal">
-                            </component>
-                        </table>
-                        <div class="summary">总分：{{ total_player }}</div>
-                    </div>
-                </div>
-            </div>
-            <h1 style="text-align: center;">{{ selectedOption }}团队总分：{{ _teamtotal }} </h1>
-            <component is="bigsubtitle" :text="'个人得分'"></component>
             <div class="app-column-container">
                 <div class="app-column-1">
-
-
                     <div>
-                        <component is="subtitle" :text="'特殊关卡'"></component>
-                        <table>
-                            <component is="input-text" ref="special1" :label="'劫虚济实'" :multiplier="30"
-                                @text-input-changed="recalTotal">
-                            </component>
-                            <component is="input-text" ref="special2" :label="'(紧急)战场侧面'" :multiplier="50"
-                                @text-input-changed="recalTotal">
-                            </component>
-                            <component is="input-text" ref="special3" :label="'(紧急)鸭速公路'" :multiplier="30"
-                                @text-input-changed="recalTotal">
-                            </component>
-                        </table>
-                        <div class="summary">总分：{{ total_speical }} </div>
+                        <component is="bigsubtitle" :text="'战斗分数'"></component>
+                        <div class="fights">
+                            <div>
+                                <Dropdown title="三层险路恶敌" :options="[
+                                    { text: '离歌的庭院', value: 40 },
+                                    { text: '赴敌者', value: 40 },
+                                    { text: '王冠之下', value: 40 },
+                                    { text: '或然面纱', value: 20 },
+                                    { text: '奉献', value: 20 },
+                                    { text: '斩首', value: 20 }
+                                ]" @score-changed="updateScore(1, $event)" />
+                            </div>
+                            <div>
+                                <Dropdown title="五层险路恶敌" :options="[
+                                    { text: '朝谒 击杀', value: 200 },
+                                    { text: '朝谒', value: 150 }
+                                ]" @score-changed="updateScore(2, $event)" />
+                            </div>
+                            <div>
+                                <Dropdown title="六层险路恶敌" :options="[
+                                    { text: '圣城 击杀', value: 200 },
+                                    { text: '圣城', value: 150 }
+                                ]" @score-changed="updateScore(3, $event)" />
+                            </div>
+                            <div>
+                                <Dropdown title="三层紧急作战" :options="[
+                                    { text: '溃乱魔典', value: 30 },
+                                    { text: '大棋一盘', value: 30 },
+                                    { text: '其他', value: 10 }
+                                ]" @score-changed="updateScore(4, $event)" />
+                            </div>
+                            <div>
+                                <Dropdown title="四层紧急作战" :options="[
+                                    { text: '猩红甬道', value: 50 },
+                                    { text: '年代断层', value: 30 },
+                                    { text: '假想对冲', value: 30 },
+                                    { text: '朽败考察', value: 30 },
+                                    { text: '其他', value: 20 }
+                                ]" @score-changed="updateScore(5, $event)" />
+                            </div>
+                            <div>
+                                <Dropdown title="五层紧急作战" :options="[
+                                    { text: '计划耕种', value: 60 },
+                                    { text: '通道封锁', value: 40 },
+                                    { text: '寄人城池下', value: 40 },
+                                    { text: '其他', value: 30 }
+                                ]" @score-changed="updateScore(6, $event)" />
+                            </div>
+                            <div>
+                                <Dropdown title="六层紧急作战" :options="[
+                                    { text: '谋求共识”', value: 60 },
+                                    { text: '神圣的渴求”', value: 60 }
+                                ]" @score-changed="updateScore(7, $event)" />
+                            </div>
+                            <div>
+                                <Dropdown title="特殊事件作战" :options="[
+                                    { text: '战场侧面', value: 60 },
+                                    { text: '鸭速公路', value: 20 },
+                                    { text: '劫虚济实', value: 20 }
+                                ]" @score-changed="updateScore(8, $event)" />
+                            </div>
+                        </div>
+                        <div class="summary">总分：{{ total_fights }}</div>
                     </div>
-                    <div>
-                        <component is="subtitle" :text="'紧急关卡'"></component>
-                        <table class="table">
-                            <component is="input-text" ref="urgent_cdbx_qc" :label="'拆东补西(清刺)'" :multiplier="15"
-                                @text-input-changed="recalTotal"></component>
-                            <component is="input-text" ref="urgent_yxqc_qc" :label="'有序清场(清刺)'" :multiplier="20"
-                                @text-input-changed="recalTotal"></component>
-                            <component is="input-text" ref="urgent_dqyp" :label="'大棋一盘'" :multiplier="30"
-                                @text-input-changed="recalTotal"></component>
-                            <component is="input-text" ref="urgent_dqyp_wd" :label="'大棋一盘(无盾)'" :multiplier="50"
-                                @text-input-changed="recalTotal"></component>
-                            <component is="input-text" ref="urgent_klmd" :label="'溃乱魔典'" :multiplier="40"
-                                @text-input-changed="recalTotal"></component>
-                            <component is="input-text" ref="urgent_nddc_qc" :label="'年代断层(清刺)'" :multiplier="40"
-                                @text-input-changed="recalTotal"></component>
-                            <component is="input-text" ref="urgent_jxdc" :label="'假想对冲'" :multiplier="30"
-                                @text-input-changed="recalTotal"></component>
-                            <component is="input-text" ref="urgent_wztm" :label="'巫咒同盟'" :multiplier="30"
-                                @text-input-changed="recalTotal"></component>
-                            <component is="input-text" ref="urgent_xhyd" :label="'猩红甬道'" :multiplier="60"
-                                @text-input-changed="recalTotal"></component>
-                            <component is="input-text" ref="urgent_mqgs" :label="'谋求共识 '" :multiplier="60"
-                                @text-input-changed="recalTotal"></component>
-                            <component is="input-text" ref="urgent_ssdkq" :label="'神圣的渴求'" :multiplier="60"
-                                @text-input-changed="recalTotal"></component>
-                        </table>
-                        <div class="summary">总分：{{ total_urgent }}</div>
-                    </div>
 
                     <div>
-                        <component is="subtitle" :text="'结算分'"></component>
+                        <component is="bigsubtitle" :text="'分数修正'"></component>
                         <table class="table">
-                            <component is="naive-input-text" ref="settlement_" :label="''"
-                                @text-input-changed="recalTotal">
-                            </component>
+                            <component is="input-text" ref="repair" :label="'分数修正'" :multiplier="-100"
+                                @text-input-changed="recalTotal"></component>
                         </table>
                     </div>
                 </div>
                 <div class="app-column-2">
-                    <div>
-                        <component is="subtitle" :text="'结局情况'"></component>
-                        <table class="table">
-                            <tr>
-                                <td>
-                                    <component is="single-tick" ref="end1" :label="'或然面纱'" :multiplier="40"
-                                        @tick-changed="recalTotal"></component>
-                                </td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <component is="single-tick" ref="end2" :label="'离歌的庭院'" :multiplier="50"
-                                        @tick-changed="recalTotal"></component>
-                                </td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <component is="single-tick" ref="end3" :label="'紧急授课'" :multiplier="100"
-                                        @tick-changed="recalTotal"></component>
-                                </td>
-                                <td>
-                                    <component is="single-tick" ref="end_chaos3" :label="'混乱状态'" :multiplier="20"
-                                        @tick-changed="recalTotal"></component>
-                                </td>
-                                <td>
-                                    <component is="single-tick" ref="end_special3" :label="'奇观年代'" :multiplier="50"
-                                        @tick-changed="recalTotal"></component>
-                                </td>
-                                <td>
-                                    <component is="single-tick" ref="end_mowang3" :label="'魔王年代'" :multiplier="20"
-                                        @tick-changed="recalTotal"></component>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <component is="single-tick" ref="end4" :label="'朝谒'" :multiplier="250"
-                                        @tick-changed="recalTotal"></component>
-                                </td>
-                                <td>
-                                    <component is="single-tick" ref="end_chaos4" :label="'混乱状态'" :multiplier="50"
-                                        @tick-changed="recalTotal"></component>
-                                </td>
-                                <td>
-                                    <component is="single-tick" ref="end_special4" :label="'奇观年代'" :multiplier="50"
-                                        @tick-changed="recalTotal"></component>
-                                </td>
-                                <td>
-                                    <component is="single-tick" ref="end_mowang4" :label="'魔王年代'" :multiplier="50"
-                                        @tick-changed="recalTotal"></component>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <component is="single-tick" ref="end5" :label="'圣城'" :multiplier="300"
-                                        @tick-changed="recalTotal"></component>
-                                </td>
-                                <td>
-                                    <component is="single-tick" ref="end_chaos5" :label="'混乱状态'" :multiplier="50"
-                                        @tick-changed="recalTotal"></component>
-                                </td>
-                                <td>
-                                    <component is="single-tick" ref="end_special5" :label="'奇观年代'" :multiplier="50"
-                                        @tick-changed="recalTotal"></component>
-                                </td>
-                                <td>
-                                    <component is="single-tick" ref="end_mowang5" :label="'魔王年代'" :multiplier="50"
-                                        @tick-changed="recalTotal"></component>
-                                </td>
-                            </tr>
-                        </table>
-                        <div class="summary">总分：{{ total_end }} </div>
+
+
+                    <component is="bigsubtitle" :text="'节点分数'">
+                    </component>
+                    <div class="steps">
+                        <div>
+                            <component is="input-text" ref="steps_levels" :label="'通过层数'" :multiplier="150"
+                                @text-input-changed="recalTotal"></component>
+                            <component is="input-text" ref="steps_collections" :label="'持有收藏品数'" :multiplier="3"
+                                @text-input-changed="recalTotal"></component>
+                            <component is="input-text" ref="steps_fights" :label="'普通作战次数'" :multiplier="20"
+                                @text-input-changed="recalTotal"></component>
+                            <component is="input-text" ref="steps_emergency_fights" :label="'紧急作战次数'" :multiplier="30"
+                                @text-input-changed="recalTotal"></component>
+                            <component is="input-text" ref="steps_event_fights" :label="'事件作战次数'" :multiplier="40"
+                                @text-input-changed="recalTotal"></component>
+                            <div class="summary">总分：{{ total_steps }}</div>
+                        </div>
                     </div>
-                    <div>
-                        <component is="subtitle" :text="'年代紧急加分'"></component>
-                        <div style="text-align: center;">取最高！！！</div>
-                        <table>
+                    <component is="bigsubtitle" :text="'事件分数'">
+                    </component>
+                    <table>
+                        <tr>
                             <td>
-                                <component is="input-text" ref="era1_1" :label="'天灾年代 I'" :multiplier="5"
-                                    @text-input-changed="recalTotal"></component>
-                                <component is="input-text" ref="era2_1" :label="'金融年代 I'" :multiplier="10"
-                                    @text-input-changed="recalTotal"></component>
-                                <component is="input-text" ref="era3_1" :label="'拥挤年代 I'" :multiplier="15"
-                                    @text-input-changed="recalTotal"></component>
-                                <component is="input-text" ref="era4_1" :label="'奇观年代 I'" :multiplier="10"
-                                    @text-input-changed="recalTotal"></component>
-                                <component is="input-text" ref="era5_1" :label="'苦难年代 I'" :multiplier="20"
-                                    @text-input-changed="recalTotal"></component>
+                                <Checkbox1 :multiplier="30" @tick-changed="handleTickChanged" />
                             </td>
                             <td>
-                                <component is="input-text" ref="era1_2" :label="'II'" :multiplier="10"
-                                    @text-input-changed="recalTotal"></component>
-                                <component is="input-text" ref="era2_2" :label="'II'" :multiplier="20"
-                                    @text-input-changed="recalTotal"></component>
-                                <component is="input-text" ref="era3_2" :label="'II'" :multiplier="25"
-                                    @text-input-changed="recalTotal"></component>
-                                <component is="input-text" ref="era4_2" :label="'II'" :multiplier="20"
-                                    @text-input-changed="recalTotal"></component>
-                                <component is="input-text" ref="era5_2" :label="'II'" :multiplier="40"
-                                    @text-input-changed="recalTotal"></component>
+                                <Checkbox2 :multiplier="60" @tick-changed="handleTickChanged" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <Checkbox3 :multiplier="30" @tick-changed="handleTickChanged" />
                             </td>
                             <td>
-                                <component is="input-text" ref="era1_3" :label="'III'" :multiplier="15"
-                                    @text-input-changed="recalTotal"></component>
-                                <component is="input-text" ref="era2_3" :label="'III'" :multiplier="40"
-                                    @text-input-changed="recalTotal"></component>
-                                <component is="input-text" ref="era3_3" :label="'III'" :multiplier="40"
-                                    @text-input-changed="recalTotal"></component>
-                                <component is="input-text" ref="era4_3" :label="'III'" :multiplier="40"
-                                    @text-input-changed="recalTotal"></component>
-                                <component is="input-text" ref="era5_3" :label="'III'" :multiplier="70"
-                                    @text-input-changed="recalTotal"></component>
+                                <Checkbox4 :multiplier="100" @tick-changed="handleTickChanged" />
                             </td>
-                        </table>
-                        <div class="summary">总分：{{ total_era }}</div>
-                    </div>
+                        </tr>
+                    </table>
+                    <div class="summary">总分：{{ total_events }}</div>
                 </div>
             </div>
-            <h1 style="text-align: center;">选手总分：{{ _total }} </h1>
-            <component is="bigsubtitle" :text="'年代说明'"></component>
-            <div class="info-column-container">
-                <div class="info-column-1">
-                    <div>
-                        <component is="subtitle" :text="'天灾年代'"></component>
-                        <p>I 清理至少2根年代之刺或饮泣之刺 +5分</p>
-                        <p>II 清理至少3根年代之刺或饮泣之刺 +10分</p>
-                        <p>III 清理至少4根年代之刺或饮泣之刺 +15分</p>
-                    </div>
-                    <div>
-                        <component is="subtitle" :text="'金融年代'"></component>
-                        <p>I 全程无漏通关 +10分</p>
-                        <p>II 持有巴别塔誓言或思绪混乱进入战斗并无漏 +20分</p>
-                        <p>III <b>同时</b>持有巴别塔誓言<b>和</b>思绪混乱进入战斗并无漏 +40分</p>
-                    </div>
-                    <div>
-                        <component is="subtitle" :text="'拥挤年代'"></component>
-                        <p>I 同时部署人数小于等于3完成战斗 +15分</p>
-                        <p>II 同时部署人数小于等于3无漏过关 +25分</p>
-                        <p>III 同时部署人数小于等于2无漏过关 +40分</p>
-                    </div>
-                </div>
-                <div class="info-column-2">
-                    <div>
-                        <component is="subtitle" :text="'奇观年代'"></component>
-                        <p>I 未使用灵感进入战斗并胜利 +10分</p>
-                        <p>II 未使用灵感进入战斗并全程无漏通关 +20分</p>
-                        <p>III 未使用灵感进入战斗并全程无漏通关，且战斗包含至少一个领袖级敌人 +40分</p>
-                    </div>
-                    <div>
-                        <component is="subtitle" :text="'苦难年代'"></component>
-                        <p>I 在药枚、筑墙、活木甲不生效的情况下完成战斗 +20分</p>
-                        <p>II 在药枚、筑墙、活木甲不生效的情况下<b>无漏</b>完成战斗 +40分</p>
-                        <p>III 在药枚、筑墙、活木甲不生效的情况下干员<b>不主动撤退或被击倒</b><b>无漏</b>完成战斗 +70分</p>
-                    </div>
-                </div>
-            </div>
+            <h1 style="text-align: center;">最终得分：{{ _total }} </h1>
+
         </div>
     </div>
 </template>
@@ -326,84 +137,61 @@ import SingleTick from './components/single-tick.vue';
 import Subtitle from './components/subtitle.vue';
 import NaiveInputText from './components/naive-input-text.vue';
 import Bigsubtitle from './components/bigsubtitle.vue';
+import Dropdown from './components/dropdown.vue';
+import Checkbox1 from './components/checkbox1.vue';
+import Checkbox2 from './components/checkbox2.vue';
+import Checkbox3 from './components/checkbox3.vue';
+import Checkbox4 from './components/checkbox4.vue';
 
 export default {
+    mounted() {
+        document.title = '通天高校联赛计算器';
+    },
     components: {
         InputText,
         SingleTick,
         Subtitle,
         NaiveInputText,
-        Bigsubtitle
+        Bigsubtitle,
+        Dropdown,
+        Checkbox1,
+        Checkbox2,
+        Checkbox3,
+        Checkbox4
     },
     data() {
         return {
             selectedOption: '',
-            total_ban: 3650,
-            total_coins: 0,
-            total_player: 0,
-            _teamtotal: 0,
             initial_value: 0,
-            total_end: 0,
-            total_urgent: 0,
-            total_penalty: 0,
-            total_settlement: 0,
-            total_era: 0,
-            _total: 0
+            total_fights: 0,
+            total_steps: 0,
+            _total: 0,
+            scores: Array(8).fill(0),
+            total_events: 0
         };
     },
     methods: {
+        handleTickChanged(result) {
+            this.total_events += result;
+            console.log('Tick changed:', result);
+            this.recalTotal();
+        },
+        updateScore(dropdownId, newScore) {
+            this.scores[dropdownId - 1] = parseInt(newScore, 10);
+            this.updateTotalFights();
+        },
+        updateTotalFights() {
+            this.total_fights = this.scores.reduce((sum, score) => sum + score, 0);
+            this.recalTotal();
+        },
         recalTotal(newResult) {
             // 更新 result 的值
-            let ban_sum = Object.keys(this.$refs)
-                .filter(ref => ref.startsWith('ban'))
-                .reduce((total, ref) => total + this.$refs[ref].multiplier, 0);
-            let ban_sub = Object.keys(this.$refs)
-                .filter(ref => ref.startsWith('ban'))
-                .reduce((total, ref) => total + this.$refs[ref].result, 0);
-            let extra = Object.keys(this.$refs)
-                .filter(ref => ref.startsWith('extrasix'))
-                .reduce((total, ref) => total + this.$refs[ref].result, 0);
-            this.total_ban = ban_sum * 2 - ban_sub + 500 - extra;
+            this.total_steps = Object.keys(this.$refs)
+                .filter(key => key.startsWith('steps'))
+                .reduce((sum, key) => sum + this.$refs[key].result, 0);
+            const repair = this.$refs.repair.result;
+            this._total = this.total_steps + this.total_fights + repair + this.total_events;
 
-            let coins_sum = Object.keys(this.$refs)
-                .filter(ref => ref.startsWith('coins'))
-                .reduce((total, ref) => total + this.$refs[ref].result, 0);
-
-            if (coins_sum > 150) {
-                this.total_coins = (coins_sum - 150) * (-40);
-            } else {
-                this.total_coins = 0;
-            }
-
-            this.total_player = Object.keys(this.$refs)
-                .filter(ref => ref.startsWith('player'))
-                .reduce((total, ref) => total + this.$refs[ref].result, 0);
-
-            this.total_end = Object.keys(this.$refs)
-                .filter(ref => ref.startsWith('end'))
-                .reduce((total, ref) => total + this.$refs[ref].result, 0);
-
-            this.total_urgent = Object.keys(this.$refs)
-                .filter(ref => ref.startsWith('urgent'))
-                .reduce((total, ref) => total + this.$refs[ref].result, 0);
-
-            this.total_speical = Object.keys(this.$refs)
-                .filter(ref => ref.startsWith('special'))
-                .reduce((total, ref) => total + this.$refs[ref].result, 0);
-
-            this.total_settlement = Object.keys(this.$refs)
-                .filter(ref => ref.startsWith('settlement'))
-                .reduce((total, ref) => total + this.$refs[ref].result, 0);
-
-            this.total_era = Object.keys(this.$refs)
-                .filter(ref => ref.startsWith('era'))
-                .reduce((total, ref) => total + this.$refs[ref].result, 0);
-
-            this._total = this.total_end + this.total_era
-                + this.total_urgent + this.total_speical
-                + this.total_settlement;
-
-            this._teamtotal = this.total_ban + this.total_coins + this.total_player;
         }
     },
     computed: {
@@ -412,58 +200,20 @@ export default {
 </script>
 
 <style>
-.centered-select {
+.steps {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
-}
-
-.custom-select {
-    padding: 10px;
-    font-size: 16px;
-    background: url('../assets/input.png') no-repeat right center;
-    background-size: 20px auto;/* 调整背景图片的大小 */
-    -webkit-appearance: none;/* 隐藏默认的下拉箭头 */
-    -moz-appearance: none;/* 隐藏默认的下拉箭头 */
-    appearance: none;/* 隐藏默认的下拉箭头 */
-    color: #d7aebe;/* 修改字体颜色 */
-    border: none;/* 去掉白色边框 */
-    font-size: 24px;
-    text-align: center; /* 使选项文字居中 */
-    text-align-last: center; /* 使选中的选项文字居中 */
-}
-
-.select {
-    padding: 10px;
-    font-size: 16px;
 }
 
 .app-container {
-    padding-top: 1100px;
-    /* background-color: #000; */
-    background-image: url('assets/background.jpg');
+    padding-top: 200px;
+    background-color: #000;
+    background-image: url('assets/background.png');
     background-size: cover;
-}
-
-.team-column-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.team-column-1 {
-    flex: 20;
-    align-self: flex-start;
-    margin-left: 100px;
-    /* 调整边距 */
-}
-
-.team-column-2 {
-    flex: 20;
-    align-self: flex-start;
-    margin-right: 100px;
-    /* 调整边距 */
+    /* 使背景图片覆盖整个容器 */
+    background-position: center;
+    /* 使背景图片居中 */
+    background-size: cover;
 }
 
 .app-column-container {
@@ -476,15 +226,6 @@ export default {
 @media (min-width: 1200px) {
 
     /* 当屏幕宽度大于或等于 1200px 时 */
-    .team-column-container {
-        flex-direction: row;
-        /* 变为两列 */
-    }
-}
-
-@media (min-width: 1200px) {
-
-    /* 当屏幕宽度大于或等于 1200px 时 */
     .app-column-container {
         flex-direction: row;
         /* 变为三列 */
@@ -492,14 +233,15 @@ export default {
 }
 
 .app-column-1 {
-    flex: 18;
+    margin-right: 50px;
     align-self: flex-start;
 }
 
 .app-column-2 {
-    flex: 30;
+    margin-left: 50px;
     align-self: flex-start;
 }
+
 
 .info-column-container {
     display: flex;
@@ -524,13 +266,14 @@ table {
 .app {
     width: 100%;
     max-width: 1200px;
+    min-height: 100vh;
     margin: 0 auto;
     padding: 20px;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
     /* background-color: #000; */
     /* 如果需要，可以添加这一行来使背景图片覆盖整个元素 */
-    color: #d7aebe;
+    color: #fff;
 }
 
 @media (max-width: 1200px) {
