@@ -206,7 +206,7 @@ export default {
 }
 
 .app-container {
-    padding-top: 200px;
+    padding-top: 25vh;
     background-color: #000;
     background-image: url('assets/background.png');
     background-size: cover;
