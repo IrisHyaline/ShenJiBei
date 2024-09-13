@@ -23,13 +23,13 @@
                             </div>
                             <div>
                                 <Dropdown title="五层险路恶敌" :options="[
-                                    { text: '朝谒 击杀', value: 200 },
+                                    { text: '朝谒混乱击杀', value: 200 },
                                     { text: '朝谒', value: 150 }
                                 ]" @score-changed="updateScore(2, $event)" />
                             </div>
                             <div>
                                 <Dropdown title="六层险路恶敌" :options="[
-                                    { text: '圣城 击杀', value: 200 },
+                                    { text: '圣城混乱击杀', value: 200 },
                                     { text: '圣城', value: 150 }
                                 ]" @score-changed="updateScore(3, $event)" />
                             </div>
@@ -77,7 +77,7 @@
                     <div>
                         <component is="bigsubtitle" :text="'分数修正'"></component>
                         <table class="table">
-                            <component is="input-text" ref="repair" :label="'分数修正'" :multiplier="-100"
+                            <component is="input-text" ref="repair" :label="'分数修正'" :multiplier="-1"
                                 @text-input-changed="recalTotal"></component>
                         </table>
                     </div>
