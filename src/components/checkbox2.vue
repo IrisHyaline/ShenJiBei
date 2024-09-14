@@ -31,6 +31,9 @@
   
   <style scoped>
   .image-checkbox {
+    margin:-25px;
+    margin-top: -70px;
+    margin-bottom: 0;
     appearance: none; /* 移除默认样式 */
     background-image: url('../assets/blank2.png'); /* 设置未选中状态的背景图片 */
     background-size: cover; /* 使背景图片覆盖整个 checkbox */
@@ -40,6 +43,9 @@
   }
 
   .image-checkbox:checked {
+    margin:-25px;
+    margin-top: -70px;
+    margin-bottom: 0;
     background-image: url('@/assets/selected2.png'); /* 设置选中状态的背景图片 */
     width: 300px; /* 根据需要调整 checkbox 的大小 */
     height: 150px; /* 根据需要调整 checkbox 的大小 */

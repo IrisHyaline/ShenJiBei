@@ -1,7 +1,7 @@
 <template>
     <div class="dropdown-component">
-        <div class="dropdown-container">
-            <div class="title">{{ title }}：</div>
+        <div class="dropdown-container" >
+            <div class="title">{{ title }}</div>
             <div>
                 <select v-model="selectedOption" @change="handleChange">
                     <option value="0">无作战分数</option>
@@ -10,7 +10,6 @@
                     </option>
                 </select>
             </div>
-            <div class="score">：{{ score }}</div>
         </div>
     </div>
 </template>
@@ -27,9 +26,9 @@ export default {
             type: Array,
             required: true
         },
-        maxTextLength: {
-            type: Number,
-            default: 4 // 默认最大文本长度
+        backgroundImage: {
+            type: String,
+            required: true
         }
     },
     data() {
@@ -69,41 +68,61 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 20px;
+    margin-top: -40px;
+    margin-bottom: 50px;
     width: 550px;
 }
 
 .dropdown-container {
     display: flex;
     align-items: center;
+    background-size: cover;
+    /* 根据需要调整 */
+    background-position: center;
+    /* 根据需要调整 */
 }
 
 select {
-    width: 100px;
-    height: 24px;
-    max-width: 100px;
+    width: 170px;
+    height: 44px;
+    max-width: 170px;
+    font-size: 18px;
     background-color: transparent;
     border: none;
     color: #fff;
     text-align: center;
-    margin-left: 15px;
-    white-space: nowrap;
-    /* 防止文本换行 */
-    overflow: hidden;
-    /* 隐藏溢出的文本 */
-    text-overflow: ellipsis;
-    /* 使用省略号处理溢出的文本 */
+    margin-left: 70px;
+    -webkit-appearance: none;
+    /* 隐藏小三角 - 针对 WebKit 浏览器 */
+    -moz-appearance: none;
+    /* 隐藏小三角 - 针对 Firefox */
+    appearance: none;
+    /* 隐藏小三角 - 针对其他浏览器 */
 }
+
 select option {
-    background-color: rgba(255, 255, 255, 0.1); /* 设置选项背景透明 */
-    color: #000; /* 设置选项文本颜色 */
+    background-color: rgba(255, 255, 255, 0.1);
+    /* 设置选项背景透明 */
+    color: #000;
+    /* 设置选项文本颜色 */
 }
 
 select:focus {
-    outline: none; /* 移除聚焦时的默认边框 */
+    outline: none;
+    /* 移除聚焦时的默认边框 */
 }
 
 select::-ms-expand {
-    display: none; /* 移除 IE 默认的下拉箭头 */
+    display: none;
+    /* 移除 IE 默认的下拉箭头 */
+}
+
+.score {
+    display: inline-block;
+    /* 必须设置为 inline-block 或 block 才能应用宽度 */
+    width: 30px;
+    /* 设置宽度为 100px */
+    text-align: right;
+    /* 右对齐文本 */
 }
 </style>

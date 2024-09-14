@@ -9,10 +9,13 @@
             <div class="app-column-container">
                 <div class="app-column-1">
                     <div>
-                        <component is="bigsubtitle" :text="'战斗分数'"></component>
+                        <!-- <Bigsubtitle text="战斗分数" backgroundImage="@/assets/all/total_fights.png" /> -->
+                        <div class="image-container">
+                            <img src="@/assets/all/total_fights.png" alt="Centered Image" class="centered-image">
+                        </div>
                         <div class="fights">
-                            <div>
-                                <Dropdown title="三层险路恶敌" :options="[
+                            <div class="dropdown1">
+                                <Dropdown title="" :options="[
                                     { text: '离歌的庭院', value: 40 },
                                     { text: '赴敌者', value: 40 },
                                     { text: '王冠之下', value: 40 },
@@ -21,27 +24,27 @@
                                     { text: '斩首', value: 20 }
                                 ]" @score-changed="updateScore(1, $event)" />
                             </div>
-                            <div>
-                                <Dropdown title="五层险路恶敌" :options="[
+                            <div class="dropdown2">
+                                <Dropdown title="" :options="[
                                     { text: '朝谒混乱击杀', value: 200 },
                                     { text: '朝谒', value: 150 }
                                 ]" @score-changed="updateScore(2, $event)" />
                             </div>
-                            <div>
-                                <Dropdown title="六层险路恶敌" :options="[
+                            <div class="dropdown3">
+                                <Dropdown title="" :options="[
                                     { text: '圣城混乱击杀', value: 200 },
                                     { text: '圣城', value: 150 }
                                 ]" @score-changed="updateScore(3, $event)" />
                             </div>
-                            <div>
-                                <Dropdown title="三层紧急作战" :options="[
+                            <div class="dropdown4">
+                                <Dropdown title="" :options="[
                                     { text: '溃乱魔典', value: 30 },
                                     { text: '大棋一盘', value: 30 },
                                     { text: '其他', value: 10 }
                                 ]" @score-changed="updateScore(4, $event)" />
                             </div>
-                            <div>
-                                <Dropdown title="四层紧急作战" :options="[
+                            <div class="dropdown5">
+                                <Dropdown title="" :options="[
                                     { text: '猩红甬道', value: 50 },
                                     { text: '年代断层', value: 30 },
                                     { text: '假想对冲', value: 30 },
@@ -49,47 +52,43 @@
                                     { text: '其他', value: 20 }
                                 ]" @score-changed="updateScore(5, $event)" />
                             </div>
-                            <div>
-                                <Dropdown title="五层紧急作战" :options="[
+                            <div class="dropdown6">
+                                <Dropdown title="" :options="[
                                     { text: '计划耕种', value: 60 },
                                     { text: '通道封锁', value: 40 },
                                     { text: '寄人城池下', value: 40 },
                                     { text: '其他', value: 30 }
                                 ]" @score-changed="updateScore(6, $event)" />
                             </div>
-                            <div>
-                                <Dropdown title="六层紧急作战" :options="[
+                            <div class="dropdown7">
+                                <Dropdown title="" :options="[
                                     { text: '谋求共识', value: 60 },
                                     { text: '神圣的渴求', value: 60 }
                                 ]" @score-changed="updateScore(7, $event)" />
                             </div>
-                            <div>
-                                <Dropdown title="特殊事件作战" :options="[
+                            <div class="dropdown8">
+                                <Dropdown title="" :options="[
                                     { text: '紧急战场侧面', value: 60 },
                                     { text: '紧急鸭速公路', value: 20 },
                                     { text: '紧急劫虚济实', value: 20 }
                                 ]" @score-changed="updateScore(8, $event)" />
                             </div>
                         </div>
-                        <div class="summary">总分：{{ total_fights }}</div>
+                        <!-- <div class="summary">总分：{{ total_fights }}</div> -->
                     </div>
 
-                    <div>
-                        <component is="bigsubtitle" :text="'分数修正'"></component>
-                        <table class="table">
-                            <component is="naive-input-text" ref="repair" :label="'分数修正'" :multiplier="-1"
-                                @text-input-changed="recalTotal"></component>
-                        </table>
-                    </div>
+
                 </div>
                 <div class="app-column-2">
 
 
-                    <component is="bigsubtitle" :text="'节点分数'">
-                    </component>
+                    <!-- <component is="bigsubtitle" :text="'节点分数'"></component> -->
+                    <div class="image-container">
+                        <img src="@/assets/all/total_steps.png" alt="Centered Image" class="centered-image">
+                    </div>
                     <div class="steps">
                         <div>
-                            <component is="input-text" ref="steps_levels" :label="'通过层数'" :multiplier="150"
+                            <component is="input-text" ref="steps_levels" :label="''" :multiplier="150"
                                 @text-input-changed="recalTotal"></component>
                             <component is="input-text" ref="steps_collections" :label="'持有收藏品数'" :multiplier="3"
                                 @text-input-changed="recalTotal"></component>
@@ -99,12 +98,27 @@
                                 @text-input-changed="recalTotal"></component>
                             <component is="input-text" ref="steps_event_fights" :label="'事件作战次数'" :multiplier="40"
                                 @text-input-changed="recalTotal"></component>
-                            <div class="summary">总分：{{ total_steps }}</div>
+                            <!-- <div class="summary">总分：{{ total_steps }}</div> -->
                         </div>
                     </div>
-                    <component is="bigsubtitle" :text="'事件分数'">
-                    </component>
-                    <table>
+                    <div>
+                        <!-- <component is="bigsubtitle" :text="'分数修正'"></component> -->
+                        <div class="image-container">
+                            <img src="@/assets/all/total_repair.png" alt="Centered Image" class="centered-image">
+                        </div>
+                        <table class="table">
+                            <component is="naive-input-text" ref="repair" :label="'分数修正'" :multiplier="-1"
+                                @text-input-changed="recalTotal"></component>
+                        </table>
+                    </div>
+
+                </div>
+                <div class="app-column-3">
+                    <!-- <component is="bigsubtitle" :text="'事件分数'"></component> -->
+                    <div class="image-container">
+                        <img src="@/assets/all/total_events.png" alt="Centered Image" class="centered-image">
+                    </div>
+                    <table class="events-container">
                         <tr>
                             <td>
                                 <Checkbox1 :multiplier="30" @tick-changed="handleTickChanged" />
@@ -122,10 +136,11 @@
                             </td>
                         </tr>
                     </table>
-                    <div class="summary">总分：{{ total_events }}</div>
+                    <!-- <div class="summary">总分：{{ total_events }}</div> -->
+                    <h1 class="final" style="text-align: center;">最终得分：{{ _total }} </h1>
+
                 </div>
             </div>
-            <h1 style="text-align: center;">最终得分：{{ _total }} </h1>
 
         </div>
     </div>
@@ -199,7 +214,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .steps {
     display: flex;
     justify-content: center;
@@ -207,13 +222,14 @@ export default {
 
 .app-container {
     padding-top: 25vh;
-    background-color: #000;
+    /* background-color: #000; */
     background-image: url('assets/background.png');
     background-size: cover;
     /* 使背景图片覆盖整个容器 */
     background-position: center;
     /* 使背景图片居中 */
     background-size: cover;
+    height: 100vh;
 }
 
 .app-column-container {
@@ -221,6 +237,7 @@ export default {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
 @media (min-width: 1200px) {
@@ -229,39 +246,143 @@ export default {
     .app-column-container {
         flex-direction: row;
         /* 变为三列 */
+        justify-content: space-between;
+        /* 在三列之间均匀分布 */
+
+        justify-content: center;
+        align-items: center;
+        width: 100%;
     }
+
 }
 
 .app-column-1 {
-    margin-right: 50px;
+    flex: 2 1 0;
+    /* 占据2份宽度 */
+    /* 根据需要调整间距 */
     align-self: flex-start;
+    margin-left: -100px;
 }
 
 .app-column-2 {
-    margin-left: 50px;
+    flex: 2 1 0;
+    /* 占据2份宽度 */
+    /* 根据需要调整间距 */
+    align-self: flex-start;
+    margin-left: -100px;
+}
+
+.app-column-3 {
+    flex: 3 1 0;
+    /* 占据3份宽度 */
+    /* 根据需要调整间距 */
     align-self: flex-start;
 }
 
-
-.info-column-container {
+.image-container {
     display: flex;
-    justify-content: space-between;
-}
-
-.info-column {
-    flex: 1;
-    margin: 0 10px;
-}
-
-.double_column_table {
-    margin: auto;
     justify-content: center;
-    display: flex;
+}
+
+.centered-image {
+    width: 400px;
+    height: auto;
 }
 
 table {
     margin: auto;
 }
+
+
+/* 八个下拉框 */
+.dropdown1 {
+    margin-left: 50px;
+    /* width: 600px; */
+    background-image: url('@/assets/all/dropdown1.png');
+    background-size: 313px 44px;
+    /* 设置背景图片的大小 */
+    background-repeat: no-repeat;
+    /* 防止背景图片重复 */
+    background-position: 100px;
+}
+
+.dropdown2 {
+    margin-left: 50px;
+    /* width: 600px; */
+    background-image: url('@/assets/all/dropdown2.png');
+    background-size: 313px 44px;
+    /* 设置背景图片的大小 */
+    background-repeat: no-repeat;
+    /* 防止背景图片重复 */
+    background-position: 100px;
+}
+
+.dropdown3 {
+    margin-left: 50px;
+    /* width: 600px; */
+    background-image: url('@/assets/all/dropdown3.png');
+    background-size: 313px 44px;
+    /* 设置背景图片的大小 */
+    background-repeat: no-repeat;
+    /* 防止背景图片重复 */
+    background-position: 100px;
+}
+
+.dropdown4 {
+    margin-left: 50px;
+    /* width: 600px; */
+    background-image: url('@/assets/all/dropdown4.png');
+    background-size: 313px 44px;
+    /* 设置背景图片的大小 */
+    background-repeat: no-repeat;
+    /* 防止背景图片重复 */
+    background-position: 100px;
+}
+
+.dropdown5 {
+    margin-left: 50px;
+    /* width: 600px; */
+    background-image: url('@/assets/all/dropdown5.png');
+    background-size: 313px 44px;
+    /* 设置背景图片的大小 */
+    background-repeat: no-repeat;
+    /* 防止背景图片重复 */
+    background-position: 100px;
+}
+
+.dropdown6 {
+    margin-left: 50px;
+    /* width: 600px; */
+    background-image: url('@/assets/all/dropdown6.png');
+    background-size: 313px 44px;
+    /* 设置背景图片的大小 */
+    background-repeat: no-repeat;
+    /* 防止背景图片重复 */
+    background-position: 100px;
+}
+
+.dropdown7 {
+    margin-left: 50px;
+    /* width: 600px; */
+    background-image: url('@/assets/all/dropdown7.png');
+    background-size: 313px 44px;
+    /* 设置背景图片的大小 */
+    background-repeat: no-repeat;
+    /* 防止背景图片重复 */
+    background-position: 100px;
+}
+
+.dropdown8 {
+    margin-left: 52px;
+    /* width: 600px; */
+    background-image: url('@/assets/all/dropdown8.png');
+    background-size: 311px 43px;
+    /* 设置背景图片的大小 */
+    background-repeat: no-repeat;
+    /* 防止背景图片重复 */
+    background-position: 100px;
+}
+
 
 .app {
     width: 100%;
@@ -289,5 +410,9 @@ table {
     font-size: 18px;
     font-weight: bold;
     text-align: center;
+}
+
+.final {
+    margin-top: 130px;
 }
 </style>
