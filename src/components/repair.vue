@@ -11,10 +11,6 @@
 <script>
 export default {
     props: {
-        multiplier: {
-            type: Number,
-            default: 0
-        },
         label: {
             type: String,
             default: ""
@@ -33,7 +29,7 @@ export default {
     },
     computed: {
         result() {
-            return this.inputNumber * this.multiplier;
+            return this.inputNumber;
         }
     }
 };
@@ -53,10 +49,8 @@ export default {
     background-color: transparent;
     text-align: center;
     border: none;
-    width: 50px;
-    font-size: 20px;
-    margin-top: 23px;
-    margin-left: 325px;
+    width: 100px;
+    font-size: 30px;
 }
 
 input[type="number"]::-webkit-inner-spin-button,

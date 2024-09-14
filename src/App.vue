@@ -89,23 +89,23 @@
                     <div class="steps">
                         <div>
                             <div class="input1">
-                                <component is="input-text" ref="steps_levels" :label="''" :multiplier="150"
+                                <component is="naive-input-text" ref="steps_levels" :label="''" :multiplier="150"
                                     @text-input-changed="recalTotal"></component>
                             </div>
                             <div class="input2">
-                                <component is="input-text" ref="steps_collections" :label="'持有收藏品数'" :multiplier="3"
+                                <component is="naive-input-text" ref="steps_collections" :label="''" :multiplier="3"
                                     @text-input-changed="recalTotal"></component>
                             </div>
                             <div class="input3">
-                                <component is="input-text" ref="steps_fights" :label="'普通作战次数'" :multiplier="20"
+                                <component is="naive-input-text" ref="steps_fights" :label="''" :multiplier="20"
                                     @text-input-changed="recalTotal"></component>
                             </div>
                             <div class="input4">
-                                <component is="input-text" ref="steps_emergency_fights" :label="'紧急作战次数'"
+                                <component is="naive-input-text" ref="steps_emergency_fights" :label="''"
                                     :multiplier="30" @text-input-changed="recalTotal"></component>
                             </div>
                             <div class="input5">
-                                <component is="input-text" ref="steps_event_fights" :label="'事件作战次数'" :multiplier="40"
+                                <component is="naive-input-text" ref="steps_event_fights" :label="''" :multiplier="40"
                                     @text-input-changed="recalTotal"></component>
                             </div>
                             <!-- <div class="summary">总分：{{ total_steps }}</div> -->
@@ -117,7 +117,7 @@
                             <img src="@/assets/all/total_repair.png" alt="Centered Image" class="centered-image">
                         </div>
                         <div class="repair">
-                            <component is="naive-input-text" ref="repair" :label="''" :multiplier="-1"
+                            <component is="repair" ref="repair" :label="''" :multiplier="-1"
                                 @text-input-changed="recalTotal"></component>
                         </div>
                     </div>
@@ -170,6 +170,7 @@ import Checkbox1 from './components/checkbox1.vue';
 import Checkbox2 from './components/checkbox2.vue';
 import Checkbox3 from './components/checkbox3.vue';
 import Checkbox4 from './components/checkbox4.vue';
+import Repair from './components/repair.vue';
 
 export default {
     mounted() {
@@ -185,7 +186,8 @@ export default {
         Checkbox1,
         Checkbox2,
         Checkbox3,
-        Checkbox4
+        Checkbox4,
+        Repair
     },
     data() {
         return {
@@ -311,7 +313,67 @@ export default {
 
 }
 
-
+/* 五个节点 */
+.input1{
+    margin-top: -55px;
+    margin-left: -100px;
+    width: 400px;
+    height: 70px;
+    background-image: url('@/assets/all/steps_levels.png');
+    background-size: 308px 65px;
+    /* 设置背景图片的大小 */
+    background-repeat: no-repeat;
+    /* 防止背景图片重复 */
+    background-position: 100px;
+}
+.input2{
+    margin-top: -20px;
+    margin-left: -100px;
+    width: 400px;
+    height: 70px;
+    background-image: url('@/assets/all/steps_collections.png');
+    background-size: 308px 65px;
+    /* 设置背景图片的大小 */
+    background-repeat: no-repeat;
+    /* 防止背景图片重复 */
+    background-position: 100px;
+}
+.input3{
+    margin-top: -20px;
+    margin-left: -100px;
+    width: 400px;
+    height: 70px;
+    background-image: url('@/assets/all/steps_fights.png');
+    background-size: 308px 65px;
+    /* 设置背景图片的大小 */
+    background-repeat: no-repeat;
+    /* 防止背景图片重复 */
+    background-position: 100px;
+}
+.input4{
+    margin-top: -20px;
+    margin-left: -100px;
+    width: 400px;
+    height: 70px;
+    background-image: url('@/assets/all/steps_emergency_fights.png');
+    background-size: 308px 65px;
+    /* 设置背景图片的大小 */
+    background-repeat: no-repeat;
+    /* 防止背景图片重复 */
+    background-position: 100px;
+}
+.input5{
+    margin-top: -20px;
+    margin-left: -100px;
+    width: 400px;
+    height: 70px;
+    background-image: url('@/assets/all/steps_event_fights.png');
+    background-size: 308px 65px;
+    /* 设置背景图片的大小 */
+    background-repeat: no-repeat;
+    /* 防止背景图片重复 */
+    background-position: 100px;
+}
 /* 八个下拉框 */
 .dropdown1 {
     margin-left: 50px;
