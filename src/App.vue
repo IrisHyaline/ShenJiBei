@@ -88,16 +88,26 @@
                     </div>
                     <div class="steps">
                         <div>
-                            <component is="input-text" ref="steps_levels" :label="''" :multiplier="150"
-                                @text-input-changed="recalTotal"></component>
-                            <component is="input-text" ref="steps_collections" :label="'持有收藏品数'" :multiplier="3"
-                                @text-input-changed="recalTotal"></component>
-                            <component is="input-text" ref="steps_fights" :label="'普通作战次数'" :multiplier="20"
-                                @text-input-changed="recalTotal"></component>
-                            <component is="input-text" ref="steps_emergency_fights" :label="'紧急作战次数'" :multiplier="30"
-                                @text-input-changed="recalTotal"></component>
-                            <component is="input-text" ref="steps_event_fights" :label="'事件作战次数'" :multiplier="40"
-                                @text-input-changed="recalTotal"></component>
+                            <div class="input1">
+                                <component is="input-text" ref="steps_levels" :label="''" :multiplier="150"
+                                    @text-input-changed="recalTotal"></component>
+                            </div>
+                            <div class="input2">
+                                <component is="input-text" ref="steps_collections" :label="'持有收藏品数'" :multiplier="3"
+                                    @text-input-changed="recalTotal"></component>
+                            </div>
+                            <div class="input3">
+                                <component is="input-text" ref="steps_fights" :label="'普通作战次数'" :multiplier="20"
+                                    @text-input-changed="recalTotal"></component>
+                            </div>
+                            <div class="input4">
+                                <component is="input-text" ref="steps_emergency_fights" :label="'紧急作战次数'"
+                                    :multiplier="30" @text-input-changed="recalTotal"></component>
+                            </div>
+                            <div class="input5">
+                                <component is="input-text" ref="steps_event_fights" :label="'事件作战次数'" :multiplier="40"
+                                    @text-input-changed="recalTotal"></component>
+                            </div>
                             <!-- <div class="summary">总分：{{ total_steps }}</div> -->
                         </div>
                     </div>
@@ -106,10 +116,10 @@
                         <div class="image-container">
                             <img src="@/assets/all/total_repair.png" alt="Centered Image" class="centered-image">
                         </div>
-                        <table class="table">
-                            <component is="naive-input-text" ref="repair" :label="'分数修正'" :multiplier="-1"
+                        <div class="repair">
+                            <component is="naive-input-text" ref="repair" :label="''" :multiplier="-1"
                                 @text-input-changed="recalTotal"></component>
-                        </table>
+                        </div>
                     </div>
 
                 </div>
@@ -137,7 +147,10 @@
                         </tr>
                     </table>
                     <!-- <div class="summary">总分：{{ total_events }}</div> -->
-                    <h1 class="final" style="text-align: center;">最终得分：{{ _total }} </h1>
+                    <div class="image-container">
+                        <img src="@/assets/all/total.png" alt="Centered Image" class="centered-image">
+                    </div>
+                    <h1 class="final" style="text-align: center;">{{ _total }} </h1>
 
                 </div>
             </div>
@@ -289,8 +302,13 @@ export default {
     height: auto;
 }
 
-table {
-    margin: auto;
+.repair {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -40px;
+    /* 根据需要调整间距 */
+
 }
 
 
@@ -413,6 +431,7 @@ table {
 }
 
 .final {
-    margin-top: 130px;
+    margin-top: -80px;
+    font-size: 80px;
 }
 </style>

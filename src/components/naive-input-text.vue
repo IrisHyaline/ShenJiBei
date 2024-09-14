@@ -3,7 +3,7 @@
         <td>{{ label }}</td>
         <td>
             <input type="number" class="input-background" v-model="inputNumber" @input="updateNumber">
-            <span class="result-span">{{ result }}</span>
+            <!-- <span class="result-span">{{ result }}</span> -->
         </td>
     </tr>
 </template>
