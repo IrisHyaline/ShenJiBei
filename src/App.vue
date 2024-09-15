@@ -46,7 +46,7 @@
                                 <Dropdown title="" :options="[
                                     { text: '溃乱魔典(40)', value: 40 },
                                     { text: '大棋一盘(30)', value: 30 },
-                                    {text: '大棋一盘苦难年代(50)', value: 50},
+                                    { text: '大棋一盘苦难年代(50)', value: 50 },
                                     { text: '其他(15)', value: 15 }
                                 ]" @score-changed="updateScore(4, $event)" />
                             </div>
@@ -135,6 +135,12 @@
                         </div>
                     </div>
 
+                    <!-- <div class="summary">总分：{{ total_events }}</div> -->
+                    <div class="image-container">
+                        <img src="@/assets/all/total.png" alt="Centered Image" class="centered-image">
+                    </div>
+                    <h1 class="final" style="text-align: center;">{{ _total }} </h1>
+
                 </div>
                 <div class="app-column-3">
                     <!-- <component is="bigsubtitle" :text="'事件分数'"></component> -->
@@ -158,13 +164,20 @@
                                 <Checkbox4 :multiplier="100" @tick-changed="handleTickChanged" />
                             </td>
                         </tr>
+                        <tr>
+                            <td>
+                                <Checkbox5 :multiplier="150" @tick-changed="handleTickChanged" />
+                            </td>
+                            <td>
+                                <Checkbox6 :multiplier="30" @tick-changed="handleTickChanged" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="4" class="centered-cell">
+                                <Checkbox7 :multiplier="120" @tick-changed="handleTickChanged" />
+                            </td>
+                        </tr>
                     </table>
-                    <!-- <div class="summary">总分：{{ total_events }}</div> -->
-                    <div class="image-container">
-                        <img src="@/assets/all/total.png" alt="Centered Image" class="centered-image">
-                    </div>
-                    <h1 class="final" style="text-align: center;">{{ _total }} </h1>
-
                 </div>
             </div>
 
@@ -183,6 +196,9 @@ import Checkbox1 from './components/checkbox1.vue';
 import Checkbox2 from './components/checkbox2.vue';
 import Checkbox3 from './components/checkbox3.vue';
 import Checkbox4 from './components/checkbox4.vue';
+import Checkbox5 from './components/checkbox5.vue';
+import Checkbox6 from './components/checkbox6.vue';
+import Checkbox7 from './components/checkbox7.vue';
 import Repair from './components/repair.vue';
 
 export default {
@@ -200,6 +216,9 @@ export default {
         Checkbox2,
         Checkbox3,
         Checkbox4,
+        Checkbox5,
+        Checkbox6,
+        Checkbox7,
         Repair
     },
     data() {
@@ -230,15 +249,15 @@ export default {
             this.recalTotal();
         },
         checkValue1(value) {
-            const max = 8;
+            const max = 6;
 
             console.log('Received value:', value, 'Type:', typeof value);
-            if (value > 1200) {
+            if (value > 900) {
                 alert(`层数上限为 ${max} ，请修改输入值`);
 
                 // 下面这几行不起作用，我也不知道为什
                 // 只能保持分数不变，不能自动改值
-                value = 1200;
+                value = 900;
                 this.$set(this, 'inputValue1', 8); // 使用 Vue.set 确保响应式更新
                 this.inputValue1 = 8; // 更新 inputValue1
                 this.$nextTick(() => {
@@ -252,10 +271,10 @@ export default {
             this.recalTotal();
         },
         checkValue6(value) {
-            const max = 6;
+            const max = 3;
 
             console.log('Received value:', value, 'Type:', typeof value);
-            if (value > 420) {
+            if (value > 210) {
                 alert(`诡谲断章次数上限为 ${max} ，请修改输入值`);
 
                 // 下面这几行不起作用，我也不知道为什
@@ -296,7 +315,7 @@ export default {
 }
 
 .app-container {
-    padding-top: 35vh;
+    padding-top: 40vh;
     /* background-color: #000; */
     background-image: url('assets/background.png');
     background-size: cover;
@@ -304,7 +323,7 @@ export default {
     background-position: center;
     /* 使背景图片居中 */
     background-size: cover;
-    height: 100vh;
+    height: 125vh;
 }
 
 .app-column-container {
@@ -369,8 +388,15 @@ export default {
     justify-content: center;
     align-items: center;
     margin-top: -40px;
+    margin-bottom: 75px;
     /* 根据需要调整间距 */
 
+}
+
+.centered-cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* 五个节点 */
