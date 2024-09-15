@@ -3,8 +3,8 @@
 <template>
     <div class="app-container">
         <div class="app">
-            <div>
-                <h1 style="text-align: center;"></h1>
+            <div class="titleImage-container">
+                <img src="@/assets/all/title.png" alt="Title Image" />
             </div>
             <div class="app-column-container">
                 <div class="app-column-1">
@@ -259,8 +259,13 @@ export default {
     justify-content: center;
 }
 
+.titleImage-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .app-container {
-    padding-top: 25vh;
     /* background-color: #000; */
     background-image: url('assets/background.png');
     background-size: cover;
