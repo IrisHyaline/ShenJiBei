@@ -187,7 +187,7 @@ import Repair from './components/repair.vue';
 
 export default {
     mounted() {
-        document.title = '通天高校联赛计算器';
+        document.title = '西部通天高校联赛计算器';
     },
     components: {
         InputText,
