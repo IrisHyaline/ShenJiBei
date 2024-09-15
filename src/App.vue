@@ -53,7 +53,7 @@
                             <div class="dropdown5">
                                 <Dropdown title="" :options="[
                                     { text: '猩红甬道(50)', value: 50 },
-                                    { text: '猩红甬道预示之谜(80)', value: 80 },
+                                    { text: '猩红甬道预示(80)', value: 80 },
                                     { text: '年代断层(30)', value: 30 },
                                     { text: '年代断层清刺(40)', value: 40 },
                                     { text: '假想对冲(30)', value: 30 },
