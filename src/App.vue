@@ -220,19 +220,20 @@ export default {
 
             console.log('Received value:', value, 'Type:', typeof value);
             if (value > 1200) {
-                alert(`层数上限为 ${max} `);
+                alert(`层数上限为 ${max} ，请修改输入值`);
 
                 // 下面这几行不起作用，我也不知道为什
                 // 只能保持分数不变，不能自动改值
-                this.$set(this, 'inputNumber', 8); // 使用 Vue.set 确保响应式更新
-                this.inputNumber = 8; // 直接更新 inputValue1
+                value = 1200;
+                this.$set(this, 'inputValue1', 8); // 使用 Vue.set 确保响应式更新
+                this.inputValue1 = 8; // 更新 inputValue1
                 this.$nextTick(() => {
                     this.$refs.steps_levels.$forceUpdate(); // 强制更新组件
                 });
             } else {
                 // 继续处理有效输入值
                 // 你的其他逻辑
-                this.inputNumber = value;
+                this.inputValue1 = value;
             }
             this.recalTotal();
         },
