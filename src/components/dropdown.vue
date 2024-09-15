@@ -91,7 +91,7 @@ select {
     border: none;
     color: #fff;
     text-align: center;
-    margin-left: 70px;
+    margin-left: 85px;
     -webkit-appearance: none;
     /* 隐藏小三角 - 针对 WebKit 浏览器 */
     -moz-appearance: none;

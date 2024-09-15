@@ -16,61 +16,61 @@
                         <div class="fights">
                             <div class="dropdown1">
                                 <Dropdown title="" :options="[
-                                    { text: '离歌的庭院', value: 40 },
-                                    { text: '赴敌者', value: 40 },
-                                    { text: '王冠之下', value: 40 },
-                                    { text: '或然面纱', value: 20 },
-                                    { text: '奉献', value: 20 },
-                                    { text: '斩首', value: 20 }
+                                    { text: '离歌的庭院(40)', value: 40 },
+                                    { text: '赴敌者(40)', value: 40 },
+                                    { text: '王冠之下(40)', value: 40 },
+                                    { text: '或然面纱(20)', value: 20 },
+                                    { text: '奉献(20)', value: 20 },
+                                    { text: '斩首(20)', value: 20 }
                                 ]" @score-changed="updateScore(1, $event)" />
                             </div>
                             <div class="dropdown2">
                                 <Dropdown title="" :options="[
-                                    { text: '朝谒混乱击杀', value: 200 },
-                                    { text: '朝谒', value: 150 }
+                                    { text: '朝谒混乱击杀(200)', value: 200 },
+                                    { text: '朝谒(150)', value: 150 }
                                 ]" @score-changed="updateScore(2, $event)" />
                             </div>
                             <div class="dropdown3">
                                 <Dropdown title="" :options="[
-                                    { text: '圣城混乱击杀', value: 200 },
-                                    { text: '圣城', value: 150 }
+                                    { text: '圣城混乱击杀(200)', value: 200 },
+                                    { text: '圣城(150)', value: 150 }
                                 ]" @score-changed="updateScore(3, $event)" />
                             </div>
                             <div class="dropdown4">
                                 <Dropdown title="" :options="[
-                                    { text: '溃乱魔典', value: 30 },
-                                    { text: '大棋一盘', value: 30 },
-                                    { text: '其他', value: 10 }
+                                    { text: '溃乱魔典(30)', value: 30 },
+                                    { text: '大棋一盘(30)', value: 30 },
+                                    { text: '其他(10)', value: 10 }
                                 ]" @score-changed="updateScore(4, $event)" />
                             </div>
                             <div class="dropdown5">
                                 <Dropdown title="" :options="[
-                                    { text: '猩红甬道', value: 50 },
-                                    { text: '年代断层', value: 30 },
-                                    { text: '假想对冲', value: 30 },
-                                    { text: '朽败考察', value: 30 },
-                                    { text: '其他', value: 20 }
+                                    { text: '猩红甬道(50)', value: 50 },
+                                    { text: '年代断层(30)', value: 30 },
+                                    { text: '假想对冲(30)', value: 30 },
+                                    { text: '朽败考察(30)', value: 30 },
+                                    { text: '其他(20)', value: 20 }
                                 ]" @score-changed="updateScore(5, $event)" />
                             </div>
                             <div class="dropdown6">
                                 <Dropdown title="" :options="[
-                                    { text: '计划耕种', value: 60 },
-                                    { text: '通道封锁', value: 40 },
-                                    { text: '寄人城池下', value: 40 },
-                                    { text: '其他', value: 30 }
+                                    { text: '计划耕种(60)', value: 60 },
+                                    { text: '通道封锁(40)', value: 40 },
+                                    { text: '寄人城池下(40)', value: 40 },
+                                    { text: '其他(30)', value: 30 }
                                 ]" @score-changed="updateScore(6, $event)" />
                             </div>
                             <div class="dropdown7">
                                 <Dropdown title="" :options="[
-                                    { text: '谋求共识', value: 60 },
-                                    { text: '神圣的渴求', value: 60 }
+                                    { text: '谋求共识(60)', value: 60 },
+                                    { text: '神圣的渴求(60)', value: 60 }
                                 ]" @score-changed="updateScore(7, $event)" />
                             </div>
                             <div class="dropdown8">
                                 <Dropdown title="" :options="[
-                                    { text: '紧急战场侧面', value: 60 },
-                                    { text: '紧急鸭速公路', value: 20 },
-                                    { text: '紧急劫虚济实', value: 20 }
+                                    { text: '紧急战场侧面(60)', value: 60 },
+                                    { text: '紧急鸭速公路(20)', value: 20 },
+                                    { text: '紧急劫虚济实(20)', value: 20 }
                                 ]" @score-changed="updateScore(8, $event)" />
                             </div>
                         </div>
