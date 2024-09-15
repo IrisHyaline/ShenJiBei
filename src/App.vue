@@ -90,7 +90,7 @@
                         <div>
                             <div class="input1">
                                 <component is="naive-input-text" ref="steps_levels" :label="''" :multiplier="150"
-                                    @text-input-changed="recalTotal"></component>
+                                    v-model="inputValue1" @text-input-changed="checkValue1"></component>
                             </div>
                             <div class="input2">
                                 <component is="naive-input-text" ref="steps_collections" :label="''" :multiplier="3"
@@ -197,7 +197,8 @@ export default {
             total_steps: 0,
             _total: 0,
             scores: Array(8).fill(0),
-            total_events: 0
+            total_events: 0,
+            inputValue1: 0
         };
     },
     methods: {
@@ -214,7 +215,29 @@ export default {
             this.total_fights = this.scores.reduce((sum, score) => sum + score, 0);
             this.recalTotal();
         },
-        recalTotal(newResult) {
+        checkValue1(value) {
+            const max = 8;
+
+            console.log('Received value:', value, 'Type:', typeof value);
+            if (value > 1200) {
+                alert(`层数上限为 ${max} `);
+
+                // 下面这几行不起作用，我也不知道为什
+                // 只能保持分数不变，不能自动改值
+                this.$set(this, 'inputNumber', 8); // 使用 Vue.set 确保响应式更新
+                this.inputNumber = 8; // 直接更新 inputValue1
+                this.$nextTick(() => {
+                    this.$refs.steps_levels.$forceUpdate(); // 强制更新组件
+                });
+            } else {
+                // 继续处理有效输入值
+                // 你的其他逻辑
+                this.inputNumber = value;
+            }
+            this.recalTotal();
+        },
+        recalTotal() {
+
             // 更新 result 的值
             this.total_steps = Object.keys(this.$refs)
                 .filter(key => key.startsWith('steps'))
@@ -314,7 +337,7 @@ export default {
 }
 
 /* 五个节点 */
-.input1{
+.input1 {
     margin-top: -55px;
     margin-left: -100px;
     width: 400px;
@@ -326,7 +349,8 @@ export default {
     /* 防止背景图片重复 */
     background-position: 100px;
 }
-.input2{
+
+.input2 {
     margin-top: -20px;
     margin-left: -100px;
     width: 400px;
@@ -338,7 +362,8 @@ export default {
     /* 防止背景图片重复 */
     background-position: 100px;
 }
-.input3{
+
+.input3 {
     margin-top: -20px;
     margin-left: -100px;
     width: 400px;
@@ -350,7 +375,8 @@ export default {
     /* 防止背景图片重复 */
     background-position: 100px;
 }
-.input4{
+
+.input4 {
     margin-top: -20px;
     margin-left: -100px;
     width: 400px;
@@ -362,7 +388,8 @@ export default {
     /* 防止背景图片重复 */
     background-position: 100px;
 }
-.input5{
+
+.input5 {
     margin-top: -20px;
     margin-left: -100px;
     width: 400px;
@@ -374,6 +401,7 @@ export default {
     /* 防止背景图片重复 */
     background-position: 100px;
 }
+
 /* 八个下拉框 */
 .dropdown1 {
     margin-left: 50px;
