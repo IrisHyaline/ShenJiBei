@@ -46,7 +46,7 @@
                                 <Dropdown title="" :options="[
                                     { text: '溃乱魔典(40)', value: 40 },
                                     { text: '大棋一盘(30)', value: 30 },
-                                    { text: '大棋一盘苦难50)', value: 50 },
+                                    { text: '大棋一盘苦难(50)', value: 50 },
                                     { text: '其他(15)', value: 15 }
                                 ]" @score-changed="updateScore(4, $event)" />
                             </div>
