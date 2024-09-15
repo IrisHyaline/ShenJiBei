@@ -3,8 +3,8 @@
 <template>
     <div class="app-container">
         <div class="app">
-            <div>
-                <h1 style="text-align: center;"></h1>
+            <div class="titleImage-container">
+                <img src="@/assets/all/xibutitle.png" alt="Title Image" />
             </div>
             <div class="app-column-container">
                 <div class="app-column-1">
@@ -313,9 +313,12 @@ export default {
     display: flex;
     justify-content: center;
 }
-
+.titleImage-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .app-container {
-    padding-top: 40vh;
     /* background-color: #000; */
     background-image: url('assets/background.png');
     background-size: cover;
@@ -323,7 +326,7 @@ export default {
     background-position: center;
     /* 使背景图片居中 */
     background-size: cover;
-    height: 125vh;
+    height: 150vh;
 }
 
 .app-column-container {
@@ -374,6 +377,7 @@ export default {
 }
 
 .image-container {
+    margin-top: -50px;
     display: flex;
     justify-content: center;
 }
@@ -388,7 +392,7 @@ export default {
     justify-content: center;
     align-items: center;
     margin-top: -40px;
-    margin-bottom: 75px;
+    margin-bottom: 125px;
     /* 根据需要调整间距 */
 
 }
@@ -463,6 +467,7 @@ export default {
     background-repeat: no-repeat;
     /* 防止背景图片重复 */
     background-position: 100px;
+    margin-bottom: 50px;
 }
 
 .input6 {
