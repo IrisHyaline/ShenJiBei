@@ -16,9 +16,9 @@
                         <div class="fights">
                             <div class="dropdown1">
                                 <Dropdown title="" :options="[
-                                    { text: '离歌的庭院(40)', value: 40 },
-                                    { text: '赴敌者(40)', value: 40 },
-                                    { text: '王冠之下(40)', value: 40 },
+                                    { text: '离歌的庭院(50)', value: 50 },
+                                    { text: '赴敌者(30)', value: 30 },
+                                    { text: '王冠之下(30)', value: 30 },
                                     { text: '或然面纱(20)', value: 20 },
                                     { text: '奉献(20)', value: 20 },
                                     { text: '斩首(20)', value: 20 }
@@ -36,41 +36,50 @@
                                     { text: '圣城(150)', value: 150 }
                                 ]" @score-changed="updateScore(3, $event)" />
                             </div>
+                            <div class="dropdown9">
+                                <Dropdown title="" :options="[
+                                    { text: '拆东补西清刺(10)', value: 10 },
+                                    { text: '有序清场清刺(15)', value: 15 }
+                                ]" @score-changed="updateScore(9, $event)" />
+                            </div>
                             <div class="dropdown4">
                                 <Dropdown title="" :options="[
-                                    { text: '溃乱魔典(30)', value: 30 },
+                                    { text: '溃乱魔典(40)', value: 40 },
                                     { text: '大棋一盘(30)', value: 30 },
-                                    { text: '其他(10)', value: 10 }
+                                    {text: '大棋一盘苦难年代(50)', value: 50},
+                                    { text: '其他(15)', value: 15 }
                                 ]" @score-changed="updateScore(4, $event)" />
                             </div>
                             <div class="dropdown5">
                                 <Dropdown title="" :options="[
                                     { text: '猩红甬道(50)', value: 50 },
+                                    { text: '猩红甬道预示之谜(80)', value: 80 },
                                     { text: '年代断层(30)', value: 30 },
+                                    { text: '年代断层清刺(40)', value: 40 },
                                     { text: '假想对冲(30)', value: 30 },
-                                    { text: '朽败考察(30)', value: 30 },
                                     { text: '其他(20)', value: 20 }
                                 ]" @score-changed="updateScore(5, $event)" />
                             </div>
                             <div class="dropdown6">
                                 <Dropdown title="" :options="[
                                     { text: '计划耕种(60)', value: 60 },
-                                    { text: '通道封锁(40)', value: 40 },
+                                    { text: '通道封锁(50)', value: 50 },
                                     { text: '寄人城池下(40)', value: 40 },
                                     { text: '其他(30)', value: 30 }
                                 ]" @score-changed="updateScore(6, $event)" />
                             </div>
                             <div class="dropdown7">
                                 <Dropdown title="" :options="[
-                                    { text: '谋求共识(60)', value: 60 },
-                                    { text: '神圣的渴求(60)', value: 60 }
+                                    { text: '谋求共识(70)', value: 70 },
+                                    { text: '神圣的渴求(70)', value: 70 }
                                 ]" @score-changed="updateScore(7, $event)" />
                             </div>
                             <div class="dropdown8">
                                 <Dropdown title="" :options="[
                                     { text: '紧急战场侧面(60)', value: 60 },
-                                    { text: '紧急鸭速公路(20)', value: 20 },
-                                    { text: '紧急劫虚济实(20)', value: 20 }
+                                    { text: '紧急鸭速公路(40)', value: 40 },
+                                    { text: '紧急劫虚济实(30)', value: 30 },
+                                    { text: '紧急信号灯(30)', value: 30 }
                                 ]" @score-changed="updateScore(8, $event)" />
                             </div>
                         </div>
@@ -91,6 +100,10 @@
                             <div class="input1">
                                 <component is="naive-input-text" ref="steps_levels" :label="''" :multiplier="150"
                                     v-model="inputValue1" @text-input-changed="checkValue1"></component>
+                            </div>
+                            <div class="input6">
+                                <component is="naive-input-text" ref="steps_holes" :label="''" :multiplier="70"
+                                    v-model="inputValue6" @text-input-changed="checkValue6"></component>
                             </div>
                             <div class="input2">
                                 <component is="naive-input-text" ref="steps_collections" :label="''" :multiplier="3"
@@ -196,9 +209,10 @@ export default {
             total_fights: 0,
             total_steps: 0,
             _total: 0,
-            scores: Array(8).fill(0),
+            scores: Array(9).fill(0),
             total_events: 0,
-            inputValue1: 0
+            inputValue1: 0,
+            inputValue6: 0
         };
     },
     methods: {
@@ -237,6 +251,28 @@ export default {
             }
             this.recalTotal();
         },
+        checkValue6(value) {
+            const max = 6;
+
+            console.log('Received value:', value, 'Type:', typeof value);
+            if (value > 420) {
+                alert(`诡谲断章次数上限为 ${max} ，请修改输入值`);
+
+                // 下面这几行不起作用，我也不知道为什
+                // 只能保持分数不变，不能自动改值
+                value = 420;
+                this.$set(this, 'inputValue6', 6); // 使用 Vue.set 确保响应式更新
+                this.inputValue6 = 6; // 更新 inputValue1
+                this.$nextTick(() => {
+                    this.$refs.steps_levels.$forceUpdate(); // 强制更新组件
+                });
+            } else {
+                // 继续处理有效输入值
+                // 你的其他逻辑
+                this.inputValue6 = value;
+            }
+            this.recalTotal();
+        },
         recalTotal() {
 
             // 更新 result 的值
@@ -260,7 +296,7 @@ export default {
 }
 
 .app-container {
-    padding-top: 25vh;
+    padding-top: 35vh;
     /* background-color: #000; */
     background-image: url('assets/background.png');
     background-size: cover;
@@ -403,6 +439,19 @@ export default {
     background-position: 100px;
 }
 
+.input6 {
+    margin-top: -20px;
+    margin-left: -100px;
+    width: 400px;
+    height: 70px;
+    background-image: url('@/assets/all/steps_holes.png');
+    background-size: 308px 41px;
+    /* 设置背景图片的大小 */
+    background-repeat: no-repeat;
+    /* 防止背景图片重复 */
+    background-position: 100px;
+}
+
 /* 八个下拉框 */
 .dropdown1 {
     margin-left: 50px;
@@ -485,6 +534,17 @@ export default {
     margin-left: 52px;
     /* width: 600px; */
     background-image: url('@/assets/all/dropdown8.png');
+    background-size: 311px 43px;
+    /* 设置背景图片的大小 */
+    background-repeat: no-repeat;
+    /* 防止背景图片重复 */
+    background-position: 100px;
+}
+
+.dropdown9 {
+    margin-left: 52px;
+    /* width: 600px; */
+    background-image: url('@/assets/all/dropdown9.png');
     background-size: 311px 43px;
     /* 设置背景图片的大小 */
     background-repeat: no-repeat;
