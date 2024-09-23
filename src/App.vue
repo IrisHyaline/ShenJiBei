@@ -77,7 +77,6 @@
                             <div class="dropdown8">
                                 <Dropdown title="" :options="[
                                     { text: '紧急战场侧面(60)', value: 60 },
-                                    { text: '紧急鸭速公路(40)', value: 40 },
                                     { text: '紧急劫虚济实(30)', value: 30 },
                                     { text: '紧急信号灯(30)', value: 30 }
                                 ]" @score-changed="updateScore(8, $event)" />
